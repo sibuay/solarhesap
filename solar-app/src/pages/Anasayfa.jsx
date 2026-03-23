@@ -38,7 +38,7 @@ export default function Anasayfa() {
         <div className="max-w-4xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 bg-white/20 px-4 py-2 rounded-full text-sm font-medium mb-6">
             <Sun className="w-4 h-4" />
-            Türkiye'nin en kapsamlı güneş hesaplayıcısı
+            Türkiye'nin en kapsamlı güneş enerji sistemi hesaplayıcısı
           </div>
           <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
             Kaç panel gerekir?<br />
