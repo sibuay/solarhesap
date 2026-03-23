@@ -37,6 +37,8 @@ const sistemTipleri = [
 export default function Hesaplayici() {
   const [mod, setMod] = useState(null);
   const [aylikTuketim, setAylikTuketim] = useState("");
+  const [anlikGucW, setAnlikGucW] = useState(0);
+  const [anlikGucKwInput, setAnlikGucKwInput] = useState("");
   const [sehir, setSehir] = useState("");
   const [sistemTipi, setSistemTipi] = useState("on-grid");
   const [sonuc, setSonuc] = useState(null);
@@ -53,7 +55,10 @@ export default function Hesaplayici() {
     const err = hesapHata();
     if (err) { setHata(err); return; }
     setHata("");
-    const s = hesapla({ aylikTuketim: Number(aylikTuketim), sehir, sistemTipi });
+    const gucW = mod === "bireysel"
+      ? anlikGucW
+      : (parseFloat(anlikGucKwInput) || 0) * 1000;
+    const s = hesapla({ aylikTuketim: Number(aylikTuketim), sehir, sistemTipi, anlikGucW: gucW });
     const y = akillıYorumlar({ sehir, sistemTipi, aylikTuketim: Number(aylikTuketim), sonuc: s });
     setSonuc(s);
     setYorumlar(y);
@@ -126,7 +131,7 @@ export default function Hesaplayici() {
     <div className="min-h-screen bg-slate-950 py-10 px-4">
       <div className="max-w-3xl mx-auto">
         <motion.button
-          onClick={() => { setMod(null); setSonuc(null); }}
+          onClick={() => { setMod(null); setSonuc(null); setAnlikGucW(0); setAnlikGucKwInput(""); }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           className="flex items-center gap-1.5 text-sm text-slate-400 hover:text-orange-400 mb-8 transition-colors"
@@ -156,7 +161,10 @@ export default function Hesaplayici() {
           </h2>
 
           {mod === "bireysel" ? (
-            <AletSecici onTuketimHesapla={(v) => setAylikTuketim(String(v))} />
+            <AletSecici onTuketimHesapla={({ aylikKwh, anlikGucW: guc }) => {
+              setAylikTuketim(String(aylikKwh));
+              setAnlikGucW(guc);
+            }} />
           ) : (
             <div className="space-y-4">
               <div>
@@ -184,6 +192,23 @@ export default function Hesaplayici() {
                     {v} kWh
                   </button>
                 ))}
+              </div>
+              <div>
+                <label className="block text-sm text-slate-400 mb-1">
+                  Anlık maksimum yük (kW) <span className="text-slate-600">— opsiyonel</span>
+                </label>
+                <p className="text-xs text-slate-500 mb-2">
+                  Aynı anda çalışabilecek tüm aletlerin toplam wattı. İnverter bu değerden küçük seçilemez.
+                </p>
+                <input
+                  type="number"
+                  value={anlikGucKwInput}
+                  onChange={(e) => setAnlikGucKwInput(e.target.value)}
+                  placeholder="örn. 5.5"
+                  min="0"
+                  step="0.1"
+                  className="w-full bg-slate-800/70 border border-slate-600/50 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-yellow-500/50 focus:border-yellow-500/50 transition-all"
+                />
               </div>
             </div>
           )}

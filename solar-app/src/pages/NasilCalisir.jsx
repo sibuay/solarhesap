@@ -52,6 +52,22 @@ const adimlar = [
   },
   {
     num: "4",
+    baslik: "Anlık Tepe Yükü & İnverter",
+    icerik: (
+      <p className="text-slate-400 text-sm leading-relaxed">
+        İnverter hem panellerden üretilen gücü hem de evin anlık yükünü taşıyabilmelidir.
+        İkisinden büyük olan değer esas alınır.
+        <code className="block bg-slate-800/80 border border-slate-700/50 rounded-lg px-3 py-2 mt-3 font-mono text-xs text-orange-300">
+          İnverter (kW) = max(Sistem gücü, Anlık tepe yükü)
+        </code>
+        <span className="block mt-3 text-xs text-slate-500">
+          Örnek: 3 kW'lık panel sistemine sahip bir evde aynı anda fırın (2.2 kW) + çamaşır makinesi (2 kW) + klima (1.5 kW) = 5.7 kW anlık yük oluşursa inverter en az 5.7 kW seçilmelidir.
+        </span>
+      </p>
+    ),
+  },
+  {
+    num: "5",
     baslik: "Panel Sayısı",
     icerik: (
       <p className="text-slate-400 text-sm leading-relaxed">
@@ -63,7 +79,7 @@ const adimlar = [
     ),
   },
   {
-    num: "5",
+    num: "6",
     baslik: "Batarya Kapasitesi",
     icerik: (
       <p className="text-slate-400 text-sm leading-relaxed">
@@ -76,7 +92,7 @@ const adimlar = [
     ),
   },
   {
-    num: "6",
+    num: "7",
     baslik: "Maliyet & Geri Ödeme",
     icerik: (
       <p className="text-slate-400 text-sm leading-relaxed">

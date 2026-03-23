@@ -45,7 +45,7 @@ export default function Navbar() {
                 <div className="absolute inset-0 bg-orange-500/25 blur-lg rounded-full group-hover:bg-amber-500/35 transition-colors duration-300" />
               </div>
               <span className="font-bold text-lg bg-linear-to-r from-orange-400 to-amber-400 bg-clip-text text-transparent">
-                SolarHesap
+                Solarlat
               </span>
             </Link>
           </motion.div>
@@ -145,7 +145,7 @@ export default function Navbar() {
                   <div className="flex items-center gap-2">
                     <Sun className="w-6 h-6 text-orange-400" />
                     <span className="font-bold bg-linear-to-r from-orange-400 to-amber-400 bg-clip-text text-transparent">
-                      SolarHesap
+                      Solarlat
                     </span>
                   </div>
                   <motion.button

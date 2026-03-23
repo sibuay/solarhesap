@@ -246,7 +246,7 @@ export default function Anasayfa() {
             className="text-center mb-14"
           >
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-              Neden SolarHesap?
+              Neden Solarlat?
             </h2>
             <p className="text-slate-400 max-w-xl mx-auto">
               Türkiye'deki en doğru güneş enerjisi hesaplama aracı, mühendislik hassasiyetiyle.

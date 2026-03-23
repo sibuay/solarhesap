@@ -1,7 +1,7 @@
 import pshData, { turkiyeOrtalamaPSH } from "../data/pshData";
 import config from "../data/config";
 
-export function hesapla({ aylikTuketim, sehir, sistemTipi }) {
+export function hesapla({ aylikTuketim, sehir, sistemTipi, anlikGucW = 0 }) {
   const gunlukTuketim = aylikTuketim / 30;
   const psh = pshData[sehir] || 4.5;
   const verim = config.verim[
@@ -16,8 +16,10 @@ export function hesapla({ aylikTuketim, sehir, sistemTipi }) {
   const panelSayisi = Math.ceil(sistemGucu * 1000 / config.panel.watt);
   const gercekSistemGucu = (panelSayisi * config.panel.watt) / 1000;
 
-  // İnverter kapasitesi
-  const inverterKapasitesi = Math.ceil(gercekSistemGucu * 10) / 10;
+  // İnverter kapasitesi — üretim tarafı ile anlık yük tarafından büyük olanı alınır
+  const inverterUretimKw = Math.ceil(gercekSistemGucu * 10) / 10;
+  const inverterYukKw = anlikGucW > 0 ? Math.ceil((anlikGucW / 1000) * 10) / 10 : 0;
+  const inverterKapasitesi = Math.max(inverterUretimKw, inverterYukKw);
 
   // Batarya kapasitesi (sadece off-grid ve hibrit)
   let bataryaKapasitesi = null;
@@ -49,6 +51,8 @@ export function hesapla({ aylikTuketim, sehir, sistemTipi }) {
     sistemGucu: +gercekSistemGucu.toFixed(2),
     panelSayisi,
     inverterKapasitesi: +inverterKapasitesi.toFixed(1),
+    inverterYukIleArttirildi: inverterYukKw > inverterUretimKw,
+    anlikGucW,
     bataryaKapasitesi: bataryaKapasitesi ? +bataryaKapasitesi.toFixed(0) : null,
     maliyet: {
       panel: Math.round(panelMaliyet),
@@ -70,6 +74,13 @@ export function akillıYorumlar({ sehir, sistemTipi, aylikTuketim, sonuc }) {
     yorumlar.push({
       tip: "uyari",
       mesaj: `${sehir}'nin güneşlenme süresi (${psh} saat/gün), Türkiye ortalamasının (${turkiyeOrtalamaPSH} saat/gün) altında. Sistem boyutlandırmasında bu göz önünde bulundurulmuştur.`,
+    });
+  }
+
+  if (sonuc.inverterYukIleArttirildi) {
+    yorumlar.push({
+      tip: "bilgi",
+      mesaj: `Anlık tepe yükünüz (${(sonuc.anlikGucW / 1000).toFixed(1)} kW), panel üretim gücünüzden büyük. İnverter kapasitesi tepe yüke göre ${sonuc.inverterKapasitesi} kW olarak boyutlandırıldı.`,
     });
   }
 
