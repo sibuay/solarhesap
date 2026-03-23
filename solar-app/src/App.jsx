@@ -10,6 +10,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <Navbar />
+      <div className="pt-20">
       <Routes>
         <Route path="/" element={<Anasayfa />} />
         <Route path="/hesaplayici" element={<Hesaplayici />} />
@@ -17,6 +18,7 @@ export default function App() {
         <Route path="/hakkimda" element={<Hakkimda />} />
         <Route path="/iletisim" element={<Iletisim />} />
       </Routes>
+      </div>
     </BrowserRouter>
   );
 }

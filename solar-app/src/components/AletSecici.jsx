@@ -22,7 +22,6 @@ export default function AletSecici({ onTuketimHesapla }) {
     });
   };
 
-  // Toplam aylık tüketim hesapla
   useEffect(() => {
     let toplam = 0;
     aletler.forEach((a) => {
@@ -40,7 +39,7 @@ export default function AletSecici({ onTuketimHesapla }) {
 
   return (
     <div className="space-y-3">
-      <p className="text-sm text-gray-500 mb-4">
+      <p className="text-sm text-slate-400 mb-4">
         Evinizdeki aletleri seçin ve günlük kullanım saatini ayarlayın.
       </p>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -50,7 +49,9 @@ export default function AletSecici({ onTuketimHesapla }) {
             <div
               key={alet.id}
               className={`border rounded-xl p-3 transition-all ${
-                secili ? "border-orange-400 bg-orange-50" : "border-gray-200 bg-white"
+                secili
+                  ? "border-orange-500/60 bg-orange-500/10"
+                  : "border-slate-600/50 bg-slate-800/40 hover:border-slate-500/70"
               }`}
             >
               <div className="flex items-center gap-2">
@@ -61,10 +62,10 @@ export default function AletSecici({ onTuketimHesapla }) {
                 >
                   <span className="text-xl">{alet.emoji}</span>
                   <div>
-                    <p className={`text-sm font-medium ${secili ? "text-orange-700" : "text-gray-700"}`}>
+                    <p className={`text-sm font-medium ${secili ? "text-orange-400" : "text-slate-300"}`}>
                       {alet.ad}
                     </p>
-                    <p className="text-xs text-gray-400">{alet.watt} W</p>
+                    <p className="text-xs text-slate-500">{alet.watt} W</p>
                   </div>
                 </button>
                 {secili && (
@@ -72,15 +73,15 @@ export default function AletSecici({ onTuketimHesapla }) {
                     <button
                       type="button"
                       onClick={() => saatGuncelle(alet.id, (secimler[alet.id]?.saat || 0) - 0.5)}
-                      className="w-6 h-6 rounded-full bg-orange-100 text-orange-600 font-bold text-sm hover:bg-orange-200 flex items-center justify-center"
-                    >-</button>
-                    <span className="w-10 text-center text-sm font-semibold text-orange-700">
+                      className="w-6 h-6 rounded-full bg-orange-500/20 border border-orange-500/30 text-orange-400 font-bold text-sm hover:bg-orange-500/30 flex items-center justify-center transition-colors"
+                    >−</button>
+                    <span className="w-10 text-center text-sm font-semibold text-orange-300">
                       {secimler[alet.id]?.saat}h
                     </span>
                     <button
                       type="button"
                       onClick={() => saatGuncelle(alet.id, (secimler[alet.id]?.saat || 0) + 0.5)}
-                      className="w-6 h-6 rounded-full bg-orange-100 text-orange-600 font-bold text-sm hover:bg-orange-200 flex items-center justify-center"
+                      className="w-6 h-6 rounded-full bg-orange-500/20 border border-orange-500/30 text-orange-400 font-bold text-sm hover:bg-orange-500/30 flex items-center justify-center transition-colors"
                     >+</button>
                   </div>
                 )}
@@ -90,8 +91,8 @@ export default function AletSecici({ onTuketimHesapla }) {
         })}
       </div>
 
-      <div className="mt-4 p-4 bg-orange-500 text-white rounded-xl flex items-center justify-between">
-        <span className="font-medium">Tahmini Aylık Tüketim</span>
+      <div className="mt-4 p-4 bg-linear-to-r from-orange-500 to-amber-500 text-white rounded-xl flex items-center justify-between shadow-lg shadow-orange-500/20">
+        <span className="font-medium text-sm">Tahmini Aylık Tüketim</span>
         <span className="text-2xl font-bold">{Math.round(toplamKwh)} kWh</span>
       </div>
     </div>

@@ -1,12 +1,13 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 import pshData from "../data/pshData";
 import AletSecici from "../components/AletSecici";
 import SonucKarti from "../components/SonucKarti";
 import Tooltip from "../components/Tooltip";
 import { hesapla, akillıYorumlar } from "../utils/hesaplama";
+import { Home, BarChart2, ArrowLeft, Zap } from "lucide-react";
 
 const sehirler = Object.keys(pshData).sort((a, b) => a.localeCompare(b, "tr"));
-
 const hizliSecimler = [150, 300, 600, 1500];
 
 const sistemTipleri = [
@@ -34,7 +35,7 @@ const sistemTipleri = [
 ];
 
 export default function Hesaplayici() {
-  const [mod, setMod] = useState(null); // null | "bireysel" | "teknik"
+  const [mod, setMod] = useState(null);
   const [aylikTuketim, setAylikTuketim] = useState("");
   const [sehir, setSehir] = useState("");
   const [sistemTipi, setSistemTipi] = useState("on-grid");
@@ -61,39 +62,60 @@ export default function Hesaplayici() {
 
   if (!mod) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-orange-50 to-amber-50 flex items-center justify-center px-4 py-16">
+      <div className="min-h-screen bg-slate-950 flex items-center justify-center px-4 py-16">
         <div className="max-w-2xl w-full">
-          <h1 className="text-3xl font-bold text-gray-800 text-center mb-3">
-            Güneş Enerjisi Hesaplayıcı
-          </h1>
-          <p className="text-gray-500 text-center mb-10">
-            Tüketim bilginizi girmek için bir mod seçin
-          </p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-center mb-10"
+          >
+            <div className="inline-flex items-center gap-2 rounded-full border border-orange-500/25 bg-orange-500/10 px-4 py-2 mb-5">
+              <Zap className="w-4 h-4 text-orange-400" />
+              <span className="text-sm text-orange-300 font-medium">Güneş Enerjisi Hesaplayıcı</span>
+            </div>
+            <h1 className="text-3xl sm:text-4xl font-bold text-white mb-3">
+              Nasıl hesaplamak istersiniz?
+            </h1>
+            <p className="text-slate-400">Tüketim bilginizi girmek için bir mod seçin</p>
+          </motion.div>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-            <button
-              onClick={() => setMod("bireysel")}
-              className="bg-white border-2 border-gray-200 rounded-2xl p-6 text-left hover:border-orange-400 hover:shadow-lg transition-all group"
-            >
-              <div className="text-4xl mb-3">🏠</div>
-              <h2 className="font-bold text-gray-800 text-lg mb-2 group-hover:text-orange-600">
-                Bireysel Mod
-              </h2>
-              <p className="text-sm text-gray-500">
-                Evinizdeki aletleri seçin — tüketiminizi bilmiyorsanız bu modu kullanın.
-              </p>
-            </button>
-            <button
-              onClick={() => setMod("teknik")}
-              className="bg-white border-2 border-gray-200 rounded-2xl p-6 text-left hover:border-orange-400 hover:shadow-lg transition-all group"
-            >
-              <div className="text-4xl mb-3">📊</div>
-              <h2 className="font-bold text-gray-800 text-lg mb-2 group-hover:text-orange-600">
-                Teknik / İşletme Modu
-              </h2>
-              <p className="text-sm text-gray-500">
-                Aylık kWh değerinizi biliyorsanız doğrudan girin.
-              </p>
-            </button>
+            {[
+              {
+                id: "bireysel",
+                emoji: "🏠",
+                baslik: "Bireysel Mod",
+                aciklama: "Evinizdeki aletleri seçin — tüketiminizi bilmiyorsanız bu modu kullanın.",
+                Icon: Home,
+              },
+              {
+                id: "teknik",
+                emoji: "📊",
+                baslik: "Teknik / İşletme Modu",
+                aciklama: "Aylık kWh değerinizi biliyorsanız doğrudan girin.",
+                Icon: BarChart2,
+              },
+            ].map(({ id, emoji, baslik, aciklama }, i) => (
+              <motion.button
+                key={id}
+                onClick={() => setMod(id)}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.1 + 0.2 }}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="group relative bg-slate-900/60 border border-slate-700/50 rounded-2xl p-7 text-left hover:border-orange-500/50 hover:shadow-xl hover:shadow-orange-500/10 transition-all duration-300"
+              >
+                <div className="absolute inset-0 rounded-2xl bg-linear-to-br from-orange-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="relative">
+                  <div className="text-4xl mb-4">{emoji}</div>
+                  <h2 className="font-bold text-white text-lg mb-2 group-hover:text-orange-400 transition-colors">
+                    {baslik}
+                  </h2>
+                  <p className="text-sm text-slate-400 leading-relaxed">{aciklama}</p>
+                </div>
+              </motion.button>
+            ))}
           </div>
         </div>
       </div>
@@ -101,35 +123,50 @@ export default function Hesaplayici() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 to-amber-50 py-10 px-4">
+    <div className="min-h-screen bg-slate-950 py-10 px-4">
       <div className="max-w-3xl mx-auto">
-        <button
+        <motion.button
           onClick={() => { setMod(null); setSonuc(null); }}
-          className="text-sm text-gray-400 hover:text-orange-500 mb-6 flex items-center gap-1"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="flex items-center gap-1.5 text-sm text-slate-400 hover:text-orange-400 mb-8 transition-colors"
         >
-          ← Mod seçimine dön
-        </button>
+          <ArrowLeft className="w-4 h-4" />
+          Mod seçimine dön
+        </motion.button>
 
-        <h1 className="text-2xl font-bold text-gray-800 mb-8">
+        <motion.h1
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-2xl font-bold text-white mb-8"
+        >
           {mod === "bireysel" ? "🏠 Bireysel Mod" : "📊 Teknik / İşletme Modu"}
-        </h1>
+        </motion.h1>
 
-        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 mb-6">
-          {/* Tüketim girişi */}
-          <h2 className="font-semibold text-gray-700 mb-4">1. Aylık Tüketim</h2>
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1 }}
+          className="bg-slate-900/60 rounded-2xl border border-slate-700/50 p-7 mb-6 backdrop-blur-sm"
+        >
+          {/* Tüketim */}
+          <h2 className="font-semibold text-slate-200 mb-4 flex items-center gap-2">
+            <span className="w-6 h-6 rounded-full bg-orange-500/20 border border-orange-500/30 text-orange-400 text-xs flex items-center justify-center font-bold">1</span>
+            Aylık Tüketim
+          </h2>
 
           {mod === "bireysel" ? (
             <AletSecici onTuketimHesapla={(v) => setAylikTuketim(String(v))} />
           ) : (
             <div className="space-y-4">
               <div>
-                <label className="block text-sm text-gray-600 mb-1">Aylık tüketim (kWh)</label>
+                <label className="block text-sm text-slate-400 mb-2">Aylık tüketim (kWh)</label>
                 <input
                   type="number"
                   value={aylikTuketim}
                   onChange={(e) => setAylikTuketim(e.target.value)}
                   placeholder="örn. 300"
-                  className="w-full border border-gray-200 rounded-xl px-4 py-3 text-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
+                  className="w-full bg-slate-800/70 border border-slate-600/50 rounded-xl px-4 py-3 text-lg text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:border-orange-500/50 transition-all"
                 />
               </div>
               <div className="flex flex-wrap gap-2">
@@ -138,10 +175,10 @@ export default function Hesaplayici() {
                     key={v}
                     type="button"
                     onClick={() => setAylikTuketim(String(v))}
-                    className={`px-4 py-2 rounded-lg text-sm font-medium border transition-colors ${
+                    className={`px-4 py-2 rounded-lg text-sm font-medium border transition-all ${
                       aylikTuketim === String(v)
-                        ? "border-orange-400 bg-orange-50 text-orange-600"
-                        : "border-gray-200 text-gray-600 hover:border-orange-300"
+                        ? "border-orange-500/60 bg-orange-500/20 text-orange-400"
+                        : "border-slate-600/50 text-slate-400 hover:border-orange-500/40 hover:text-slate-200"
                     }`}
                   >
                     {v} kWh
@@ -151,17 +188,20 @@ export default function Hesaplayici() {
             </div>
           )}
 
-          {/* Şehir seçimi */}
+          {/* Şehir */}
           <div className="mt-8">
-            <h2 className="font-semibold text-gray-700 mb-4">2. Şehir Seçimi</h2>
+            <h2 className="font-semibold text-slate-200 mb-4 flex items-center gap-2">
+              <span className="w-6 h-6 rounded-full bg-orange-500/20 border border-orange-500/30 text-orange-400 text-xs flex items-center justify-center font-bold">2</span>
+              Şehir Seçimi
+            </h2>
             <select
               value={sehir}
               onChange={(e) => setSehir(e.target.value)}
-              className="w-full border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-orange-400 bg-white"
+              className="w-full bg-slate-800/70 border border-slate-600/50 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:border-orange-500/50 transition-all appearance-none"
             >
-              <option value="">Şehir seçin...</option>
+              <option value="" className="bg-slate-800">Şehir seçin...</option>
               {sehirler.map((s) => (
-                <option key={s} value={s}>
+                <option key={s} value={s} className="bg-slate-800">
                   {s} ({pshData[s]} saat/gün PSH)
                 </option>
               ))}
@@ -170,7 +210,10 @@ export default function Hesaplayici() {
 
           {/* Sistem tipi */}
           <div className="mt-8">
-            <h2 className="font-semibold text-gray-700 mb-4">3. Sistem Tipi</h2>
+            <h2 className="font-semibold text-slate-200 mb-4 flex items-center gap-2">
+              <span className="w-6 h-6 rounded-full bg-orange-500/20 border border-orange-500/30 text-orange-400 text-xs flex items-center justify-center font-bold">3</span>
+              Sistem Tipi
+            </h2>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
               {sistemTipleri.map((s) => (
                 <button
@@ -179,13 +222,13 @@ export default function Hesaplayici() {
                   onClick={() => setSistemTipi(s.deger)}
                   className={`relative border-2 rounded-xl p-4 text-left transition-all ${
                     sistemTipi === s.deger
-                      ? "border-orange-400 bg-orange-50"
-                      : "border-gray-200 hover:border-orange-200"
+                      ? "border-orange-500/60 bg-orange-500/15"
+                      : "border-slate-600/50 bg-slate-800/40 hover:border-slate-500/70"
                   }`}
                 >
                   <span className="text-2xl block mb-2">{s.emoji}</span>
                   <Tooltip aciklama={s.aciklama}>
-                    <span className={`font-semibold text-sm ${sistemTipi === s.deger ? "text-orange-700" : "text-gray-700"}`}>
+                    <span className={`font-semibold text-sm ${sistemTipi === s.deger ? "text-orange-400" : "text-slate-300"}`}>
                       {s.etiket}
                     </span>
                   </Tooltip>
@@ -195,21 +238,29 @@ export default function Hesaplayici() {
           </div>
 
           {hata && (
-            <p className="mt-4 text-sm text-red-500 bg-red-50 border border-red-200 rounded-lg px-3 py-2">{hata}</p>
+            <div className="mt-4 text-sm text-red-400 bg-red-500/10 border border-red-500/30 rounded-lg px-4 py-3">
+              {hata}
+            </div>
           )}
 
-          <button
+          <motion.button
             onClick={hesapYap}
-            className="mt-8 w-full py-4 bg-orange-500 text-white rounded-xl font-bold text-lg hover:bg-orange-600 transition-colors shadow-md shadow-orange-200"
+            whileHover={{ scale: 1.01 }}
+            whileTap={{ scale: 0.99 }}
+            className="mt-8 w-full py-4 bg-linear-to-r from-orange-500 to-amber-500 text-white rounded-xl font-bold text-lg shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 transition-all"
           >
             Hesapla →
-          </button>
-        </div>
+          </motion.button>
+        </motion.div>
 
         {sonuc && (
-          <div id="sonuc">
+          <motion.div
+            id="sonuc"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+          >
             <SonucKarti sonuc={sonuc} yorumlar={yorumlar} sistemTipi={sistemTipi} sehir={sehir} />
-          </div>
+          </motion.div>
         )}
       </div>
     </div>
