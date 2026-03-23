@@ -97,7 +97,7 @@ export function akillıYorumlar({ sehir, sistemTipi, aylikTuketim, sonuc }) {
   if (sistemTipi === "on-grid") {
     yorumlar.push({
       tip: "firsat",
-      mesaj: "Şebekeye bağlı (on-grid) sisteminizde ürettiğiniz fazla enerjiyi YEKDEM kapsamında şebekeye satabilirsiniz. Dağıtım şirketinizle iletişime geçin.",
+      mesaj: "Şebekeye bağlı (on-grid) sisteminizde ürettiğiniz fazla enerji, santral bazlı mahsup (net metering) sistemiyle bir sonraki faturanıza yansıtılır. Dağıtım şirketinizle iletişime geçin.",
     });
   }
 

@@ -134,7 +134,7 @@ export default function NasilCalisir() {
           <p className="text-sm text-orange-200 leading-relaxed">
             <strong className="text-orange-400">Şeffaflık Notu:</strong> Tüm hesaplamalar
             tarayıcınızda gerçekleşir, hiçbir veriniz sunucuya gönderilmez. PSH değerleri GEPA
-            (Güneş Enerjisi Potansiyel Atlası) kaynaklıdır. Fiyatlar Mart 2025 piyasa değerlerine
+            (Güneş Enerjisi Potansiyel Atlası) kaynaklıdır. Fiyatlar Mart 2026 piyasa değerlerine
             göre belirlenmiş olup ±%15 sapma gösterebilir.
           </p>
         </motion.div>
