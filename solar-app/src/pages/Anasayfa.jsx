@@ -110,11 +110,11 @@ export default function Anasayfa() {
   }, []);
 
   return (
-    <div className="bg-slate-950 text-slate-100">
+    <div className="bg-slate-900 text-slate-100">
       {/* ── Hero ──────────────────────────────────────────── */}
       <section
         ref={heroRef}
-        className="relative min-h-screen w-full overflow-hidden bg-linear-to-br from-slate-950 via-slate-900 to-slate-950 flex items-center"
+        className="relative min-h-screen w-full overflow-hidden bg-linear-to-br from-slate-900 via-slate-800 to-slate-900 flex items-center"
       >
         <AnimatedOrbs />
         <FloatingParticles />
@@ -221,7 +221,7 @@ export default function Anasayfa() {
             {istatistikler.map(({ deger, birim, aciklama }) => (
               <div
                 key={aciklama}
-                className="rounded-2xl border border-slate-700/50 bg-slate-900/40 p-5 backdrop-blur-sm"
+                className="rounded-2xl border border-slate-600/60 bg-slate-700/40 p-5 backdrop-blur-sm"
               >
                 <p className="text-2xl font-bold text-orange-400">
                   {deger} <span className="text-base">{birim}</span>
@@ -233,11 +233,11 @@ export default function Anasayfa() {
         </div>
 
         {/* Bottom fade */}
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-linear-to-t from-slate-950 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-linear-to-t from-slate-900 to-transparent" />
       </section>
 
       {/* ── Özellikler ────────────────────────────────────── */}
-      <section className="py-24 px-6 bg-slate-950">
+      <section className="py-24 px-6 bg-slate-900">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -262,7 +262,7 @@ export default function Anasayfa() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
                 whileHover={{ scale: 1.03 }}
-                className="group relative rounded-2xl border border-slate-700/50 bg-slate-900/60 p-6 backdrop-blur-sm hover:border-orange-500/40 hover:shadow-lg hover:shadow-orange-500/10 transition-all duration-300"
+                className="group relative rounded-2xl border border-slate-600/60 bg-slate-800/60 p-6 backdrop-blur-sm hover:border-orange-500/40 hover:shadow-lg hover:shadow-orange-500/10 transition-all duration-300"
               >
                 <div className="absolute inset-0 rounded-2xl bg-linear-to-br from-orange-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className="relative">
@@ -279,7 +279,7 @@ export default function Anasayfa() {
       </section>
 
       {/* ── 3 Adım ────────────────────────────────────────── */}
-      <section className="py-24 px-6 bg-slate-900/50">
+      <section className="py-24 px-6 bg-slate-800/50">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -331,7 +331,7 @@ export default function Anasayfa() {
       </section>
 
       {/* ── Referanslar ───────────────────────────────────── */}
-      <section className="py-24 px-6 bg-slate-950">
+      <section className="py-24 px-6 bg-slate-900">
         <div className="max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -352,7 +352,7 @@ export default function Anasayfa() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.12 }}
                 whileHover={{ scale: 1.02 }}
-                className="rounded-2xl border border-slate-700/50 bg-slate-900/60 p-6 backdrop-blur-sm hover:border-orange-500/30 transition-all duration-300"
+                className="rounded-2xl border border-slate-600/60 bg-slate-800/60 p-6 backdrop-blur-sm hover:border-orange-500/30 transition-all duration-300"
               >
                 <div className="flex gap-0.5 mb-4">
                   {Array.from({ length: puan }).map((_, j) => (
@@ -378,7 +378,7 @@ export default function Anasayfa() {
       </section>
 
       {/* ── Final CTA ─────────────────────────────────────── */}
-      <section className="py-24 px-6 bg-linear-to-br from-slate-900 via-slate-900 to-slate-950 border-t border-slate-800">
+      <section className="py-24 px-6 bg-linear-to-br from-slate-800 via-slate-800 to-slate-900 border-t border-slate-700">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

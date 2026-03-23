@@ -3,7 +3,7 @@ import { Shield, Award, Wrench } from "lucide-react";
 
 export default function Hakkimda() {
   return (
-    <div className="min-h-screen bg-slate-950 py-16 px-4">
+    <div className="min-h-screen bg-slate-900 py-16 px-4">
       <div className="max-w-2xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -42,7 +42,7 @@ export default function Hakkimda() {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 + 0.2 }}
-              className="bg-slate-900/60 border border-slate-700/50 rounded-xl p-5 text-center hover:border-orange-500/30 transition-all backdrop-blur-sm"
+              className="bg-slate-800/60 border border-slate-600/60 rounded-xl p-5 text-center hover:border-orange-500/30 transition-all backdrop-blur-sm"
             >
               <div className="w-10 h-10 bg-orange-500/15 border border-orange-500/20 rounded-xl flex items-center justify-center mx-auto mb-3">
                 <Icon className="w-5 h-5 text-orange-400" />
@@ -57,7 +57,7 @@ export default function Hakkimda() {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
-          className="bg-slate-900/60 border border-slate-700/50 rounded-2xl p-6 backdrop-blur-sm"
+          className="bg-slate-800/60 border border-slate-600/60 rounded-2xl p-6 backdrop-blur-sm"
         >
           <h2 className="font-bold text-white mb-3">Hesaplama Motoru Hakkında</h2>
           <p className="text-sm text-slate-400 leading-relaxed">

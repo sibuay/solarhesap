@@ -80,7 +80,7 @@ export default function SonucKarti({ sonuc, yorumlar, sistemTipi, sehir }) {
       </div>
 
       {/* Maliyet dökümü */}
-      <div className="bg-slate-900/60 rounded-xl border border-slate-700/50 p-5 backdrop-blur-sm">
+      <div className="bg-slate-800/60 rounded-xl border border-slate-600/60 p-5 backdrop-blur-sm">
         <p className="font-semibold text-slate-200 mb-4">Maliyet Dökümü</p>
         <div className="space-y-2.5">
           {[
@@ -94,7 +94,7 @@ export default function SonucKarti({ sonuc, yorumlar, sistemTipi, sehir }) {
               <span className="font-medium text-slate-200">{deger.toLocaleString("tr-TR")} ₺</span>
             </div>
           ))}
-          <div className="border-t border-slate-700/50 pt-2.5 flex justify-between font-bold text-white">
+          <div className="border-t border-slate-600/60 pt-2.5 flex justify-between font-bold text-white">
             <span>Toplam</span>
             <span>{maliyet.toplam.toLocaleString("tr-TR")} ₺</span>
           </div>
@@ -125,7 +125,7 @@ export default function SonucKarti({ sonuc, yorumlar, sistemTipi, sehir }) {
       )}
 
       {/* CTA */}
-      <div className="bg-slate-900/60 rounded-2xl border border-slate-700/50 p-6 text-center backdrop-blur-sm">
+      <div className="bg-slate-800/60 rounded-2xl border border-slate-600/60 p-6 text-center backdrop-blur-sm">
         <p className="text-lg font-bold text-white mb-2">Bu sonucu bir uzmanla değerlendirmek ister misiniz?</p>
         <p className="text-sm text-slate-400 mb-5">Ücretsiz 30 dakikalık danışmanlık seansı için iletişime geçin.</p>
         <a

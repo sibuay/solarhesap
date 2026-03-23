@@ -7,7 +7,7 @@ const adimlar = [
     icerik: (
       <p className="text-slate-400 text-sm leading-relaxed">
         Girdiğiniz aylık tüketim (kWh) 30'a bölünerek günlük ortalama tüketim hesaplanır.
-        <code className="block bg-slate-800/80 border border-slate-700/50 rounded-lg px-3 py-2 mt-3 font-mono text-xs text-orange-300">
+        <code className="block bg-slate-800/80 border border-slate-600/60 rounded-lg px-3 py-2 mt-3 font-mono text-xs text-orange-300">
           Günlük tüketim = Aylık tüketim ÷ 30
         </code>
       </p>
@@ -32,7 +32,7 @@ const adimlar = [
         <p className="text-slate-400 text-sm leading-relaxed mb-3">
           Sistem verimliliği, kayıpları (sıcaklık, kablo, inverter) kapsar.
         </p>
-        <code className="block bg-slate-800/80 border border-slate-700/50 rounded-lg px-3 py-2 font-mono text-xs text-orange-300 mb-3">
+        <code className="block bg-slate-800/80 border border-slate-600/60 rounded-lg px-3 py-2 font-mono text-xs text-orange-300 mb-3">
           Sistem gücü (kW) = Günlük tüketim ÷ (PSH × Sistem verimi)
         </code>
         <div className="grid grid-cols-3 gap-2 mt-2">
@@ -57,7 +57,7 @@ const adimlar = [
       <p className="text-slate-400 text-sm leading-relaxed">
         İnverter hem panellerden üretilen gücü hem de evin anlık yükünü taşıyabilmelidir.
         İkisinden büyük olan değer esas alınır.
-        <code className="block bg-slate-800/80 border border-slate-700/50 rounded-lg px-3 py-2 mt-3 font-mono text-xs text-orange-300">
+        <code className="block bg-slate-800/80 border border-slate-600/60 rounded-lg px-3 py-2 mt-3 font-mono text-xs text-orange-300">
           İnverter (kW) = max(Sistem gücü, Anlık tepe yükü)
         </code>
         <span className="block mt-3 text-xs text-slate-500">
@@ -72,7 +72,7 @@ const adimlar = [
     icerik: (
       <p className="text-slate-400 text-sm leading-relaxed">
         Varsayılan olarak 400 W monokristalin panel kullanılır. Panel sayısı yukarı yuvarlanır.
-        <code className="block bg-slate-800/80 border border-slate-700/50 rounded-lg px-3 py-2 mt-3 font-mono text-xs text-orange-300">
+        <code className="block bg-slate-800/80 border border-slate-600/60 rounded-lg px-3 py-2 mt-3 font-mono text-xs text-orange-300">
           Panel sayısı = ⌈Sistem gücü (W) ÷ 400 W⌉
         </code>
       </p>
@@ -85,7 +85,7 @@ const adimlar = [
       <p className="text-slate-400 text-sm leading-relaxed">
         Yalnızca karma ve bağımsız sistemlerde hesaplanır. LiFePO4 bataryalar için DoD %80,
         AGM için %50 kullanılır. Varsayılan yedek süre 1 gündür.
-        <code className="block bg-slate-800/80 border border-slate-700/50 rounded-lg px-3 py-2 mt-3 font-mono text-xs text-orange-300">
+        <code className="block bg-slate-800/80 border border-slate-600/60 rounded-lg px-3 py-2 mt-3 font-mono text-xs text-orange-300">
           Batarya (kWh) = Günlük tüketim × Yedek gün ÷ DoD
         </code>
       </p>
@@ -98,7 +98,7 @@ const adimlar = [
       <p className="text-slate-400 text-sm leading-relaxed">
         Panel, inverter, batarya ve kurulum maliyetleri toplanır. Yıllık tasarruf, sisteminizin
         ürettiği enerji ile elektrik birim fiyatı çarpılarak bulunur.
-        <code className="block bg-slate-800/80 border border-slate-700/50 rounded-lg px-3 py-2 mt-3 font-mono text-xs text-orange-300">
+        <code className="block bg-slate-800/80 border border-slate-600/60 rounded-lg px-3 py-2 mt-3 font-mono text-xs text-orange-300">
           Geri ödeme (yıl) = Toplam maliyet ÷ Yıllık tasarruf
         </code>
       </p>
@@ -108,7 +108,7 @@ const adimlar = [
 
 export default function NasilCalisir() {
   return (
-    <div className="min-h-screen bg-slate-950 py-16 px-4">
+    <div className="min-h-screen bg-slate-900 py-16 px-4">
       <div className="max-w-3xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -128,7 +128,7 @@ export default function NasilCalisir() {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.08 }}
-              className="flex gap-5 bg-slate-900/50 border border-slate-700/50 rounded-2xl p-5 backdrop-blur-sm"
+              className="flex gap-5 bg-slate-800/60 border border-slate-600/60 rounded-2xl p-5 backdrop-blur-sm"
             >
               <div className="w-10 h-10 bg-linear-to-br from-orange-500 to-amber-500 text-white rounded-xl flex items-center justify-center font-bold text-sm shrink-0 mt-0.5 shadow-lg shadow-orange-500/20">
                 {num}

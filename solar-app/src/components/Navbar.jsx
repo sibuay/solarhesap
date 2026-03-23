@@ -27,8 +27,8 @@ export default function Navbar() {
       <nav
         className={`mx-auto max-w-7xl px-4 sm:px-6 transition-all duration-300 ${
           scrolled
-            ? "bg-slate-950/85 backdrop-blur-xl border border-slate-700/50 rounded-2xl shadow-xl shadow-black/20"
-            : "bg-slate-900/60 backdrop-blur-md border border-slate-700/30 rounded-2xl"
+            ? "bg-slate-900/90 backdrop-blur-xl border border-slate-600/60 rounded-2xl shadow-xl shadow-black/20"
+            : "bg-slate-800/60 backdrop-blur-md border border-slate-600/40 rounded-2xl"
         }`}
       >
         <div className="flex items-center justify-between h-14">
@@ -45,7 +45,7 @@ export default function Navbar() {
                 <div className="absolute inset-0 bg-orange-500/25 blur-lg rounded-full group-hover:bg-amber-500/35 transition-colors duration-300" />
               </div>
               <span className="font-bold text-lg bg-linear-to-r from-orange-400 to-amber-400 bg-clip-text text-transparent">
-                Solarlat
+                solarlat
               </span>
             </Link>
           </motion.div>
@@ -112,7 +112,7 @@ export default function Navbar() {
 
           {/* Mobile hamburger */}
           <motion.button
-            className="md:hidden flex items-center justify-center w-9 h-9 rounded-lg text-slate-300 hover:bg-slate-700/50 transition-colors"
+            className="md:hidden flex items-center justify-center w-9 h-9 rounded-lg text-slate-300 hover:bg-slate-600/50 transition-colors"
             onClick={() => setIsOpen(true)}
             whileTap={{ scale: 0.9 }}
           >
@@ -133,7 +133,7 @@ export default function Navbar() {
               onClick={() => setIsOpen(false)}
             />
             <motion.div
-              className="fixed top-0 right-0 bottom-0 w-80 bg-slate-950/95 backdrop-blur-xl border-l border-slate-700/50 shadow-2xl md:hidden"
+              className="fixed top-0 right-0 bottom-0 w-80 bg-slate-900/95 backdrop-blur-xl border-l border-slate-600/50 shadow-2xl md:hidden"
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
@@ -145,7 +145,7 @@ export default function Navbar() {
                   <div className="flex items-center gap-2">
                     <Sun className="w-6 h-6 text-orange-400" />
                     <span className="font-bold bg-linear-to-r from-orange-400 to-amber-400 bg-clip-text text-transparent">
-                      Solarlat
+                      solarlat
                     </span>
                   </div>
                   <motion.button

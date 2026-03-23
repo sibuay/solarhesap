@@ -12,7 +12,7 @@ export default function Iletisim() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 py-16 px-4">
+    <div className="min-h-screen bg-slate-900 py-16 px-4">
       <div className="max-w-2xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -95,7 +95,7 @@ export default function Iletisim() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="space-y-4 bg-slate-900/60 border border-slate-700/50 rounded-2xl p-6 backdrop-blur-sm"
+            className="space-y-4 bg-slate-800/60 border border-slate-700/50 rounded-2xl p-6 backdrop-blur-sm"
           >
             {[
               { name: "ad", label: "Ad Soyad", type: "text", placeholder: "Adınız" },
@@ -109,7 +109,7 @@ export default function Iletisim() {
                   value={form[name]}
                   onChange={(e) => setForm({ ...form, [name]: e.target.value })}
                   placeholder={placeholder}
-                  className="w-full bg-slate-800/70 border border-slate-600/50 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:border-orange-500/50 transition-all"
+                  className="w-full bg-slate-700/70 border border-slate-600/50 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:border-orange-500/50 transition-all"
                 />
               </div>
             ))}
@@ -121,7 +121,7 @@ export default function Iletisim() {
                 value={form.mesaj}
                 onChange={(e) => setForm({ ...form, mesaj: e.target.value })}
                 placeholder="Projeniz hakkında kısaca bilgi verin..."
-                className="w-full bg-slate-800/70 border border-slate-600/50 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:border-orange-500/50 transition-all resize-none"
+                className="w-full bg-slate-700/70 border border-slate-600/50 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:border-orange-500/50 transition-all resize-none"
               />
             </div>
             <motion.button

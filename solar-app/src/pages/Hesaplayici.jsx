@@ -67,7 +67,7 @@ export default function Hesaplayici() {
 
   if (!mod) {
     return (
-      <div className="min-h-screen bg-slate-950 flex items-center justify-center px-4 py-16">
+      <div className="min-h-screen bg-slate-900 flex items-center justify-center px-4 py-16">
         <div className="max-w-2xl w-full">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -109,7 +109,7 @@ export default function Hesaplayici() {
                 transition={{ delay: i * 0.1 + 0.2 }}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="group relative bg-slate-900/60 border border-slate-700/50 rounded-2xl p-7 text-left hover:border-orange-500/50 hover:shadow-xl hover:shadow-orange-500/10 transition-all duration-300"
+                className="group relative bg-slate-800/60 border border-slate-600/60 rounded-2xl p-7 text-left hover:border-orange-500/50 hover:shadow-xl hover:shadow-orange-500/10 transition-all duration-300"
               >
                 <div className="absolute inset-0 rounded-2xl bg-linear-to-br from-orange-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className="relative">
@@ -128,7 +128,7 @@ export default function Hesaplayici() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-950 py-10 px-4">
+    <div className="min-h-screen bg-slate-900 py-10 px-4">
       <div className="max-w-3xl mx-auto">
         <motion.button
           onClick={() => { setMod(null); setSonuc(null); setAnlikGucW(0); setAnlikGucKwInput(""); }}
@@ -152,7 +152,7 @@ export default function Hesaplayici() {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="bg-slate-900/60 rounded-2xl border border-slate-700/50 p-7 mb-6 backdrop-blur-sm"
+          className="bg-slate-800/60 rounded-2xl border border-slate-600/60 p-7 mb-6 backdrop-blur-sm"
         >
           {/* Tüketim */}
           <h2 className="font-semibold text-slate-200 mb-4 flex items-center gap-2">
@@ -174,7 +174,7 @@ export default function Hesaplayici() {
                   value={aylikTuketim}
                   onChange={(e) => setAylikTuketim(e.target.value)}
                   placeholder="örn. 300"
-                  className="w-full bg-slate-800/70 border border-slate-600/50 rounded-xl px-4 py-3 text-lg text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:border-orange-500/50 transition-all"
+                  className="w-full bg-slate-700/70 border border-slate-500/60 rounded-xl px-4 py-3 text-lg text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:border-orange-500/50 transition-all"
                 />
               </div>
               <div className="flex flex-wrap gap-2">
@@ -186,7 +186,7 @@ export default function Hesaplayici() {
                     className={`px-4 py-2 rounded-lg text-sm font-medium border transition-all ${
                       aylikTuketim === String(v)
                         ? "border-orange-500/60 bg-orange-500/20 text-orange-400"
-                        : "border-slate-600/50 text-slate-400 hover:border-orange-500/40 hover:text-slate-200"
+                        : "border-slate-500/60 text-slate-400 hover:border-orange-500/40 hover:text-slate-200"
                     }`}
                   >
                     {v} kWh
@@ -207,7 +207,7 @@ export default function Hesaplayici() {
                   placeholder="örn. 5.5"
                   min="0"
                   step="0.1"
-                  className="w-full bg-slate-800/70 border border-slate-600/50 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-yellow-500/50 focus:border-yellow-500/50 transition-all"
+                  className="w-full bg-slate-700/70 border border-slate-500/60 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-yellow-500/50 focus:border-yellow-500/50 transition-all"
                 />
               </div>
             </div>
@@ -222,7 +222,7 @@ export default function Hesaplayici() {
             <select
               value={sehir}
               onChange={(e) => setSehir(e.target.value)}
-              className="w-full bg-slate-800/70 border border-slate-600/50 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:border-orange-500/50 transition-all appearance-none"
+              className="w-full bg-slate-700/70 border border-slate-500/60 rounded-xl px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:border-orange-500/50 transition-all appearance-none"
             >
               <option value="" className="bg-slate-800">Şehir seçin...</option>
               {sehirler.map((s) => (
@@ -248,7 +248,7 @@ export default function Hesaplayici() {
                   className={`relative border-2 rounded-xl p-4 text-left transition-all ${
                     sistemTipi === s.deger
                       ? "border-orange-500/60 bg-orange-500/15"
-                      : "border-slate-600/50 bg-slate-800/40 hover:border-slate-500/70"
+                      : "border-slate-500/60 bg-slate-800/40 hover:border-slate-500/70"
                   }`}
                 >
                   <span className="text-2xl block mb-2">{s.emoji}</span>

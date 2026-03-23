@@ -71,7 +71,7 @@ export default function AletSecici({ onTuketimHesapla }) {
               className={`border rounded-xl p-3 transition-all ${
                 secili
                   ? "border-orange-500/60 bg-orange-500/10"
-                  : "border-slate-600/50 bg-slate-800/40 hover:border-slate-500/70"
+                  : "border-slate-500/60 bg-slate-700/40 hover:border-slate-500/70"
               }`}
             >
               <div className="flex items-center gap-2">
@@ -131,7 +131,7 @@ export default function AletSecici({ onTuketimHesapla }) {
         <div className={`p-4 rounded-xl flex items-center justify-between border transition-all ${
           anlikGucW > 0
             ? "bg-yellow-500/10 border-yellow-500/30 text-yellow-300"
-            : "bg-slate-800/50 border-slate-600/50 text-slate-400"
+            : "bg-slate-700/50 border-slate-500/60 text-slate-400"
         }`}>
           <span className="font-medium text-sm flex items-center gap-1">
             <Zap className="w-3.5 h-3.5" /> Anlık Tepe Gücü
