@@ -114,7 +114,7 @@ export default function Anasayfa() {
       {/* ── Hero ──────────────────────────────────────────── */}
       <section
         ref={heroRef}
-        className="relative min-h-screen w-full overflow-hidden bg-linear-to-br from-slate-900 via-slate-800 to-slate-900 flex items-center"
+        className="relative min-h-screen w-full overflow-hidden flex items-center"
       >
         <AnimatedOrbs />
         <FloatingParticles />

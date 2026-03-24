@@ -6,13 +6,14 @@ import NasilCalisir from "./pages/NasilCalisir";
 import Hakkimda from "./pages/Hakkimda";
 import Iletisim from "./pages/Iletisim";
 import SolarBackground from "./components/SolarBackground";
+import Footer from "./components/Footer";
 
 export default function App() {
   return (
     <BrowserRouter>
       <SolarBackground />
       <Navbar />
-      <div className="relative z-10 pt-20">
+      <div className="relative z-10">
         <Routes>
           <Route path="/" element={<Anasayfa />} />
           <Route path="/hesaplayici" element={<Hesaplayici />} />
@@ -20,6 +21,7 @@ export default function App() {
           <Route path="/hakkimda" element={<Hakkimda />} />
           <Route path="/iletisim" element={<Iletisim />} />
         </Routes>
+        <Footer />
       </div>
     </BrowserRouter>
   );

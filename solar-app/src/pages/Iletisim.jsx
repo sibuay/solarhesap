@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { MessageCircle, Mail, Phone, CheckCircle } from "lucide-react";
+import { Mail, CheckCircle } from "lucide-react";
 
 export default function Iletisim() {
   const [form, setForm] = useState({ ad: "", email: "", mesaj: "" });
@@ -12,7 +12,7 @@ export default function Iletisim() {
   };
 
   return (
-    <div className="min-h-screen py-16 px-4">
+    <div className="min-h-screen pt-36 pb-16 px-4">
       <div className="max-w-2xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -25,59 +25,22 @@ export default function Iletisim() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
-          {[
-            {
-              href: "https://wa.me/905001234567",
-              icon: MessageCircle,
-              color: "green",
-              label: "WhatsApp",
-              deger: "Hızlı Yanıt",
-            },
-            {
-              icon: Mail,
-              color: "blue",
-              label: "E-posta",
-              deger: "info@solarhesap.com",
-            },
-            {
-              icon: Phone,
-              color: "orange",
-              label: "Telefon",
-              deger: "+90 500 123 4567",
-            },
-          ].map(({ href, icon: Icon, color, label, deger }, i) => {
-            const renkler = {
-              green: "border-green-500/30 bg-green-500/10 text-green-400",
-              blue: "border-blue-500/30 bg-blue-500/10 text-blue-400",
-              orange: "border-orange-500/30 bg-orange-500/10 text-orange-400",
-            };
-            const Wrapper = href ? "a" : "div";
-            return (
-              <motion.div
-                key={label}
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.1 }}
-              >
-                <Wrapper
-                  href={href}
-                  target={href ? "_blank" : undefined}
-                  rel={href ? "noopener noreferrer" : undefined}
-                  className={`flex items-center gap-3 border rounded-xl p-4 transition-all backdrop-blur-sm ${renkler[color]} ${href ? "hover:brightness-125 cursor-pointer" : ""} block`}
-                >
-                  <div className="p-2 rounded-lg bg-white/5">
-                    <Icon className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <p className="text-xs text-slate-400">{label}</p>
-                    <p className="font-semibold text-white text-sm">{deger}</p>
-                  </div>
-                </Wrapper>
-              </motion.div>
-            );
-          })}
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1 }}
+          className="mb-10"
+        >
+          <div className="flex items-center gap-3 border border-blue-500/30 bg-blue-500/10 rounded-xl p-4 backdrop-blur-sm">
+            <div className="p-2 rounded-lg bg-white/5 text-blue-400">
+              <Mail className="w-5 h-5" />
+            </div>
+            <div>
+              <p className="text-xs text-slate-400">E-posta</p>
+              <p className="font-semibold text-white text-sm">info@solarlat.com</p>
+            </div>
+          </div>
+        </motion.div>
 
         {gonderildi ? (
           <motion.div
