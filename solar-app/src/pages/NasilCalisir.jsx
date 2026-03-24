@@ -1,141 +1,88 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 
-const adimlar = [
+const kavramlar = [
   {
-    num: "1",
-    baslik: "Günlük Tüketim",
-    icerik: (
-      <p className="text-slate-400 text-sm leading-relaxed">
-        Girdiğiniz aylık tüketim (kWh) 30'a bölünerek günlük ortalama tüketim hesaplanır.
-        <code className="block bg-slate-800/80 border border-slate-600/60 rounded-lg px-3 py-2 mt-3 font-mono text-xs text-orange-300">
-          Günlük tüketim = Aylık tüketim ÷ 30
-        </code>
-      </p>
-    ),
+    emoji: "⚡",
+    baslik: "kWh nedir?",
+    aciklama:
+      "Kilowatt-saat (kWh), kullandığınız elektrik miktarının birimidir. Faturanızdaki rakam budur. 1000 W'lık bir fırını 1 saat çalıştırmak 1 kWh tüketir. Türkiye'de ortalama bir hane aylık 200–400 kWh tüketir.",
   },
   {
-    num: "2",
-    baslik: "PSH — Zirve Güneşlenme Süresi",
-    icerik: (
-      <p className="text-slate-400 text-sm leading-relaxed">
-        Her ilin yıllık ortalama günlük güneşlenme süresi (Peak Sun Hours) GEPA verileri baz
-        alınarak belirlenmiştir. Örneğin Şanlıurfa ≈ 5.8 saat/gün, İstanbul ≈ 3.8 saat/gün,
-        Konya ≈ 5.0 saat/gün. Bu değer, ilinize göre otomatik uygulanır.
-      </p>
-    ),
+    emoji: "🔌",
+    baslik: "Şebekeye Bağlı Sistem (On-Grid)",
+    aciklama:
+      "Panellerinizden üretilen enerji önce evinizde kullanılır, fazlası elektrik şebekesine aktarılır. Güneş olmadığında şebekeden beslenmeye devam edersiniz. Batarya gerektirmez, bu yüzden kurulum maliyeti en düşük seçenektir. Türkiye'de en çok tercih edilen sistem tipidir.",
   },
   {
-    num: "3",
-    baslik: "Sistem Gücü",
-    icerik: (
-      <>
-        <p className="text-slate-400 text-sm leading-relaxed mb-3">
-          Sistem verimliliği, kayıpları (sıcaklık, kablo, inverter) kapsar.
-        </p>
-        <code className="block bg-slate-800/80 border border-slate-600/60 rounded-lg px-3 py-2 font-mono text-xs text-orange-300 mb-3">
-          Sistem gücü (kW) = Günlük tüketim ÷ (PSH × Sistem verimi)
-        </code>
-        <div className="grid grid-cols-3 gap-2 mt-2">
-          {[
-            { tip: "Şebekeye Bağlı", verim: "%75" },
-            { tip: "Karma", verim: "%72" },
-            { tip: "Bağımsız", verim: "%68" },
-          ].map(({ tip, verim }) => (
-            <div key={tip} className="bg-orange-500/10 border border-orange-500/20 rounded-lg p-2.5 text-center text-xs">
-              <p className="font-semibold text-orange-400">{tip}</p>
-              <p className="text-slate-400 mt-0.5">Verim: {verim}</p>
-            </div>
-          ))}
-        </div>
-      </>
-    ),
+    emoji: "🔋",
+    baslik: "Tamamen Bağımsız Sistem (Off-Grid)",
+    aciklama:
+      "Elektrik şebekesine hiç bağlı olunmaz. Tüm enerji ihtiyacı paneller ve bataryalardan karşılanır. Şebeke olmayan ya da ulaşılması çok pahalı olan yerler için idealdir. Batarya maliyeti yüksek olduğundan toplam kurulum bedeli diğer seçeneklere göre daha fazladır.",
   },
   {
-    num: "4",
-    baslik: "Anlık Tepe Yükü & İnverter",
-    icerik: (
-      <p className="text-slate-400 text-sm leading-relaxed">
-        İnverter hem panellerden üretilen gücü hem de evin anlık yükünü taşıyabilmelidir.
-        İkisinden büyük olan değer esas alınır.
-        <code className="block bg-slate-800/80 border border-slate-600/60 rounded-lg px-3 py-2 mt-3 font-mono text-xs text-orange-300">
-          İnverter (kW) = max(Sistem gücü, Anlık tepe yükü)
-        </code>
-        <span className="block mt-3 text-xs text-slate-500">
-          Örnek: 3 kW'lık panel sistemine sahip bir evde aynı anda fırın (2.2 kW) + çamaşır makinesi (2 kW) + klima (1.5 kW) = 5.7 kW anlık yük oluşursa inverter en az 5.7 kW seçilmelidir.
-        </span>
-      </p>
-    ),
+    emoji: "⚡🔋",
+    baslik: "Karma Sistem (Hibrit)",
+    aciklama:
+      "Hem şebekeye bağlıdır hem de batarya içerir. Güneşli havalarda panellerden, bulutlu günlerde veya gece bataryadan, batarya bitince şebekeden yararlanırsınız. Elektrik kesintilerinde eviniz batarya sayesinde çalışmaya devam eder. En esnek ve konforlu seçenektir.",
   },
   {
-    num: "5",
-    baslik: "Panel Sayısı",
-    icerik: (
-      <p className="text-slate-400 text-sm leading-relaxed">
-        Varsayılan olarak 400 W monokristalin panel kullanılır. Panel sayısı yukarı yuvarlanır.
-        <code className="block bg-slate-800/80 border border-slate-600/60 rounded-lg px-3 py-2 mt-3 font-mono text-xs text-orange-300">
-          Panel sayısı = ⌈Sistem gücü (W) ÷ 400 W⌉
-        </code>
-      </p>
-    ),
+    emoji: "🟦",
+    baslik: "Güneş Paneli",
+    aciklama:
+      "Güneş ışığını elektriğe dönüştüren levhalardır. Gücü Watt (W) cinsinden ifade edilir. Hesaplayıcımız 400 W'lık monokristalin panel kullanır; bu, günümüzde konut projelerinde yaygın olan standart boyuttur.",
   },
   {
-    num: "6",
-    baslik: "Batarya Kapasitesi",
-    icerik: (
-      <p className="text-slate-400 text-sm leading-relaxed">
-        Yalnızca karma ve bağımsız sistemlerde hesaplanır. LiFePO4 bataryalar için DoD %80,
-        AGM için %50 kullanılır. Varsayılan yedek süre 1 gündür.
-        <code className="block bg-slate-800/80 border border-slate-600/60 rounded-lg px-3 py-2 mt-3 font-mono text-xs text-orange-300">
-          Batarya (kWh) = Günlük tüketim × Yedek gün ÷ DoD
-        </code>
-      </p>
-    ),
+    emoji: "🔄",
+    baslik: "İnverter",
+    aciklama:
+      "Paneller doğru akım (DC) üretir, evinizdeki cihazlar ise alternatif akım (AC) ile çalışır. İnverter bu dönüşümü sağlar. Aynı zamanda enerji üretimini izler ve sistemi yönetir. Kapasitesi kW cinsinden ifade edilir.",
   },
   {
-    num: "7",
-    baslik: "Maliyet & Geri Ödeme",
-    icerik: (
-      <p className="text-slate-400 text-sm leading-relaxed">
-        Panel, inverter, batarya ve kurulum maliyetleri toplanır. Yıllık tasarruf, sisteminizin
-        ürettiği enerji ile elektrik birim fiyatı çarpılarak bulunur.
-        <code className="block bg-slate-800/80 border border-slate-600/60 rounded-lg px-3 py-2 mt-3 font-mono text-xs text-orange-300">
-          Geri ödeme (yıl) = Toplam maliyet ÷ Yıllık tasarruf
-        </code>
-      </p>
-    ),
+    emoji: "🔆",
+    baslik: "Güneşlenme Süresi (PSH)",
+    aciklama:
+      "Bir bölgede günlük ortalama kaç saat boyunca güneşin tam güçte çalıştığını gösterir. Şanlıurfa gibi güneyli illerde bu değer ~5.8 saat/gün iken İstanbul'da ~3.8 saat/gündür. Hesaplayıcımız seçtiğiniz ile göre bu değeri otomatik uygular.",
+  },
+  {
+    emoji: "📅",
+    baslik: "Geri Ödeme Süresi",
+    aciklama:
+      "Kurulum maliyetinin, sistemin yıllık sağladığı tasarrufla ne kadar sürede karşılandığını gösterir. Örneğin 150.000 ₺ kurulum maliyeti olan bir sistemin yıllık 25.000 ₺ tasarruf sağlaması durumunda geri ödeme süresi 6 yıldır. Panellerin ömrü genellikle 25–30 yıldır.",
   },
 ];
 
 export default function NasilCalisir() {
   return (
     <div className="min-h-screen pt-36 pb-16 px-4">
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-2xl mx-auto">
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className="mb-12"
         >
-          <h1 className="text-3xl sm:text-4xl font-bold text-white mb-3">Nasıl Çalışır?</h1>
-          <p className="text-slate-400">
-            Hesaplama motorunun arkasındaki mühendislik mantığı — şeffaf ve kaynaklı.
+          <h1 className="text-3xl sm:text-4xl font-bold text-white mb-3">Temel Kavramlar</h1>
+          <p className="text-slate-400 leading-relaxed">
+            Hesaplayıcıyı kullanmadan önce kafanızda soru işareti bırakan terimler varsa
+            bu sayfadaki kısa açıklamalara göz atın.
           </p>
         </motion.div>
 
-        <div className="space-y-6">
-          {adimlar.map(({ num, baslik, icerik }, i) => (
+        <div className="space-y-4">
+          {kavramlar.map(({ emoji, baslik, aciklama }, i) => (
             <motion.div
-              key={num}
-              initial={{ opacity: 0, y: 15 }}
+              key={baslik}
+              initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.08 }}
-              className="flex gap-5 bg-slate-800/60 border border-slate-600/60 rounded-2xl p-5 backdrop-blur-sm"
+              transition={{ delay: i * 0.06 }}
+              className="flex gap-4 bg-slate-800/60 border border-slate-600/60 rounded-2xl p-5 backdrop-blur-sm hover:border-orange-500/25 transition-all"
             >
-              <div className="w-10 h-10 bg-linear-to-br from-orange-500 to-amber-500 text-white rounded-xl flex items-center justify-center font-bold text-sm shrink-0 mt-0.5 shadow-lg shadow-orange-500/20">
-                {num}
-              </div>
-              <div className="flex-1">
-                <h2 className="font-bold text-white mb-3">{baslik}</h2>
-                {icerik}
+              <div className="text-2xl shrink-0 mt-0.5">{emoji}</div>
+              <div>
+                <h2 className="font-bold text-white mb-1.5">{baslik}</h2>
+                <p className="text-sm text-slate-400 leading-relaxed">{aciklama}</p>
               </div>
             </motion.div>
           ))}
@@ -144,16 +91,18 @@ export default function NasilCalisir() {
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6 }}
-          className="mt-8 bg-orange-500/10 border border-orange-500/25 rounded-2xl p-6"
+          transition={{ delay: 0.55 }}
+          className="mt-10 text-center"
         >
-          <p className="text-sm text-orange-200 leading-relaxed">
-            <strong className="text-orange-400">Şeffaflık Notu:</strong> Tüm hesaplamalar
-            tarayıcınızda gerçekleşir, hiçbir veriniz sunucuya gönderilmez. PSH değerleri GEPA
-            (Güneş Enerjisi Potansiyel Atlası) kaynaklıdır. Fiyatlar Mart 2026 piyasa değerlerine
-            göre belirlenmiş olup ±%15 sapma gösterebilir.
-          </p>
+          <p className="text-slate-400 mb-5 text-sm">Artık hazır mısınız?</p>
+          <Link
+            to="/hesaplayici"
+            className="inline-flex items-center gap-2 px-7 py-3.5 bg-linear-to-r from-orange-500 to-amber-500 text-white font-semibold rounded-full shadow-lg shadow-orange-500/25 hover:scale-105 transition-all duration-300"
+          >
+            Hesaplamaya Geç <ArrowRight className="w-4 h-4" />
+          </Link>
         </motion.div>
+
       </div>
     </div>
   );

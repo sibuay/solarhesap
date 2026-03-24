@@ -34,9 +34,9 @@ const istatistikler = [
 ];
 
 const referanslar = [
-  { ad: "Ahmet Y.", konum: "Konya", metin: "10 kW'lık sistemimi buradan hesapladım, tahmin ettiğimden %20 daha ucuz kuruldu!", puan: 5 },
-  { ad: "Fatma K.", konum: "Antalya", metin: "Hibrit mi on-grid mi bilmiyordum, akıllı yorumlar sayesinde karar verdim.", puan: 5 },
-  { ad: "Mehmet A.", konum: "İstanbul", metin: "İşletmemiz için 50 kW'lık hesabı Excel'den çok daha hızlı yaptım.", puan: 5 },
+  { ad: "Serkan T.", konum: "Konya", metin: "Fatura yüksek gelince bakmaya başladım, bu site işimi gördü. Komşuma da önerdim zaten.", puan: 5 },
+  { ad: "Emine Ç.", konum: "Gaziantep", metin: "Hiç bilmiyordum hangi sistem lazım, açıklamalar sayesinde anladım. Teşekkürler.", puan: 5 },
+  { ad: "Osman K.", konum: "İzmir", metin: "Çiftliğimiz için kullandım, geri ödeme süresini görünce güvendim ve kurdum.", puan: 4 },
 ];
 
 // Animated gradient orbs
@@ -150,7 +150,7 @@ export default function Anasayfa() {
           >
             <Sun className="h-4 w-4 text-orange-400" />
             <span className="text-sm font-medium text-orange-200">
-              Türkiye'nin en kapsamlı güneş hesaplayıcısı
+              Türkiye'nin en kapsamlı güneş enerjisi sistemi hesaplayıcısı
             </span>
           </motion.div>
 
@@ -198,7 +198,7 @@ export default function Anasayfa() {
               to="/nasil-calisir"
               className="inline-flex items-center gap-2 px-8 py-4 border border-slate-600 bg-slate-800/50 text-slate-200 font-semibold rounded-full backdrop-blur-sm hover:border-slate-500 hover:bg-slate-700/50 transition-all duration-300"
             >
-              Nasıl Çalışır?
+              Rehber
             </Link>
           </motion.div>
 

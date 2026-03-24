@@ -1,13 +1,14 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { Sun, Menu, X, Home, Calculator, HelpCircle, User, Phone } from "lucide-react";
+import { Sun, Menu, X, Home, Calculator, HelpCircle, Briefcase, User, Phone } from "lucide-react";
 
 const links = [
   { to: "/", label: "Anasayfa", icon: Home },
   { to: "/hesaplayici", label: "Hesaplayıcı", icon: Calculator },
-  { to: "/nasil-calisir", label: "Nasıl Çalışır?", icon: HelpCircle },
-  { to: "/hakkimda", label: "Hakkımda", icon: User },
+  { to: "/nasil-calisir", label: "Rehber", icon: HelpCircle },
+  { to: "/hizmetlerimiz", label: "Hizmetlerimiz", icon: Briefcase },
+  { to: "/hakkimda", label: "Hakkımızda", icon: User },
   { to: "/iletisim", label: "İletişim", icon: Phone },
 ];
 
