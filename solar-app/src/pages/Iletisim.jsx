@@ -12,7 +12,7 @@ export default function Iletisim() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-900 py-16 px-4">
+    <div className="min-h-screen py-16 px-4">
       <div className="max-w-2xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

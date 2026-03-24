@@ -110,7 +110,7 @@ export default function Anasayfa() {
   }, []);
 
   return (
-    <div className="bg-slate-900 text-slate-100">
+    <div className="text-slate-100">
       {/* ── Hero ──────────────────────────────────────────── */}
       <section
         ref={heroRef}
@@ -237,7 +237,7 @@ export default function Anasayfa() {
       </section>
 
       {/* ── Özellikler ────────────────────────────────────── */}
-      <section className="py-24 px-6 bg-slate-900">
+      <section className="py-24 px-6 bg-slate-900/70">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -331,7 +331,7 @@ export default function Anasayfa() {
       </section>
 
       {/* ── Referanslar ───────────────────────────────────── */}
-      <section className="py-24 px-6 bg-slate-900">
+      <section className="py-24 px-6 bg-slate-900/70">
         <div className="max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

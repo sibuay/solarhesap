@@ -67,7 +67,7 @@ export default function Hesaplayici() {
 
   if (!mod) {
     return (
-      <div className="min-h-screen bg-slate-900 flex items-center justify-center px-4 py-16">
+      <div className="min-h-screen flex items-center justify-center px-4 py-16">
         <div className="max-w-2xl w-full">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -128,7 +128,7 @@ export default function Hesaplayici() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-900 py-10 px-4">
+    <div className="min-h-screen py-10 px-4">
       <div className="max-w-3xl mx-auto">
         <motion.button
           onClick={() => { setMod(null); setSonuc(null); setAnlikGucW(0); setAnlikGucKwInput(""); }}
