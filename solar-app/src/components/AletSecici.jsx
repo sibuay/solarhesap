@@ -36,7 +36,7 @@ export default function AletSecici({ onTuketimHesapla }) {
     aletler.forEach((a) => {
       if (secimler[a.id]) {
         aylikKwh += (a.watt * secimler[a.id].saat * 30) / 1000;
-        if (secimler[a.id].esZamanli) anlikGucW += a.watt;
+        if (secimler[a.id].esZamanli) anlikGucW += (a.tepeWatt || a.watt);
       }
     });
     onTuketimHesapla({ aylikKwh: Math.round(aylikKwh), anlikGucW });
@@ -48,7 +48,7 @@ export default function AletSecici({ onTuketimHesapla }) {
   }, 0);
 
   const anlikGucW = aletler.reduce((acc, a) => {
-    if (secimler[a.id]?.esZamanli) return acc + a.watt;
+    if (secimler[a.id]?.esZamanli) return acc + (a.tepeWatt || a.watt);
     return acc;
   }, 0);
 
@@ -85,7 +85,9 @@ export default function AletSecici({ onTuketimHesapla }) {
                     <p className={`text-sm font-medium ${secili ? "text-orange-400" : "text-slate-300"}`}>
                       {alet.ad}
                     </p>
-                    <p className="text-xs text-slate-500">{alet.watt} W</p>
+                    <p className="text-xs text-slate-500">
+                      {alet.watt} W{alet.tepeWatt ? ` · tepe ${alet.tepeWatt} W` : ""}
+                    </p>
                   </div>
                 </button>
                 {secili && (

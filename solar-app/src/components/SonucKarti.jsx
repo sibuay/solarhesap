@@ -127,7 +127,7 @@ export default function SonucKarti({ sonuc, yorumlar, sistemTipi, sehir }) {
       {/* CTA */}
       <div className="bg-slate-800/60 rounded-2xl border border-slate-600/60 p-6 text-center backdrop-blur-sm">
         <p className="text-lg font-bold text-white mb-2">Bu sonucu bir uzmanla değerlendirmek ister misiniz?</p>
-        <p className="text-sm text-slate-400 mb-5">Ücretsiz 30 dakikalık danışmanlık seansı için iletişime geçin.</p>
+        <p className="text-sm text-slate-400 mb-5">Projenize özel detaylı analiz ve danışmanlık için bize ulaşın.</p>
         <a
           href="/iletisim"
           className="inline-flex items-center gap-2 px-7 py-3 bg-linear-to-r from-orange-500 to-amber-500 text-white rounded-xl font-semibold shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 hover:scale-105 transition-all duration-300"

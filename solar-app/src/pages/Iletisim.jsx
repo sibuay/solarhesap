@@ -1,14 +1,36 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, CheckCircle } from "lucide-react";
+import { Mail, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
 
 export default function Iletisim() {
   const [form, setForm] = useState({ ad: "", email: "", mesaj: "" });
-  const [gonderildi, setGonderildi] = useState(false);
+  const [durum, setDurum] = useState("bos"); // bos | gonderiyor | basarili | hata
 
-  const gonder = (e) => {
+  const gonder = async (e) => {
     e.preventDefault();
-    setGonderildi(true);
+    setDurum("gonderiyor");
+
+    try {
+      const res = await fetch("https://formsubmit.co/ajax/info@solarlat.com", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          Ad: form.ad,
+          Email: form.email,
+          Mesaj: form.mesaj,
+          _subject: `Solarlat İletişim: ${form.ad}`,
+        }),
+      });
+
+      if (res.ok) {
+        setDurum("basarili");
+        setForm({ ad: "", email: "", mesaj: "" });
+      } else {
+        setDurum("hata");
+      }
+    } catch {
+      setDurum("hata");
+    }
   };
 
   return (
@@ -42,7 +64,7 @@ export default function Iletisim() {
           </div>
         </motion.div>
 
-        {gonderildi ? (
+        {durum === "basarili" ? (
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -50,7 +72,7 @@ export default function Iletisim() {
           >
             <CheckCircle className="w-12 h-12 text-green-400 mx-auto mb-4" />
             <h2 className="font-bold text-white text-lg mb-2">Mesajınız İletildi!</h2>
-            <p className="text-slate-400 text-sm">En kısa sürede size dönüş yapacağım.</p>
+            <p className="text-slate-400 text-sm">En kısa sürede size dönüş yapacağız.</p>
           </motion.div>
         ) : (
           <motion.form
@@ -60,6 +82,13 @@ export default function Iletisim() {
             transition={{ delay: 0.3 }}
             className="space-y-4 bg-slate-800/60 border border-slate-700/50 rounded-2xl p-6 backdrop-blur-sm"
           >
+            {durum === "hata" && (
+              <div className="flex items-center gap-2 text-sm text-red-400 bg-red-500/10 border border-red-500/30 rounded-lg px-4 py-3">
+                <AlertCircle className="w-4 h-4 shrink-0" />
+                Mesaj gönderilemedi. Lütfen tekrar deneyin veya doğrudan info@solarlat.com adresine yazın.
+              </div>
+            )}
+
             {[
               { name: "ad", label: "Ad Soyad", type: "text", placeholder: "Adınız" },
               { name: "email", label: "E-posta", type: "email", placeholder: "ornek@email.com" },
@@ -72,7 +101,8 @@ export default function Iletisim() {
                   value={form[name]}
                   onChange={(e) => setForm({ ...form, [name]: e.target.value })}
                   placeholder={placeholder}
-                  className="w-full bg-slate-700/70 border border-slate-600/50 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:border-orange-500/50 transition-all"
+                  disabled={durum === "gonderiyor"}
+                  className="w-full bg-slate-700/70 border border-slate-600/50 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:border-orange-500/50 transition-all disabled:opacity-50"
                 />
               </div>
             ))}
@@ -84,16 +114,25 @@ export default function Iletisim() {
                 value={form.mesaj}
                 onChange={(e) => setForm({ ...form, mesaj: e.target.value })}
                 placeholder="Projeniz hakkında kısaca bilgi verin..."
-                className="w-full bg-slate-700/70 border border-slate-600/50 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:border-orange-500/50 transition-all resize-none"
+                disabled={durum === "gonderiyor"}
+                className="w-full bg-slate-700/70 border border-slate-600/50 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:border-orange-500/50 transition-all resize-none disabled:opacity-50"
               />
             </div>
             <motion.button
               type="submit"
-              whileHover={{ scale: 1.01 }}
-              whileTap={{ scale: 0.99 }}
-              className="w-full py-3.5 bg-linear-to-r from-orange-500 to-amber-500 text-white font-semibold rounded-xl shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 transition-all"
+              disabled={durum === "gonderiyor"}
+              whileHover={durum !== "gonderiyor" ? { scale: 1.01 } : {}}
+              whileTap={durum !== "gonderiyor" ? { scale: 0.99 } : {}}
+              className="w-full py-3.5 bg-linear-to-r from-orange-500 to-amber-500 text-white font-semibold rounded-xl shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 transition-all disabled:opacity-60 flex items-center justify-center gap-2"
             >
-              Mesaj Gönder
+              {durum === "gonderiyor" ? (
+                <>
+                  <Loader2 className="w-4 h-4 animate-spin" />
+                  Gönderiliyor...
+                </>
+              ) : (
+                "Mesaj Gönder"
+              )}
             </motion.button>
           </motion.form>
         )}

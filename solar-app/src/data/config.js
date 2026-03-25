@@ -1,5 +1,6 @@
 // Güncellenebilir fiyat ve teknik konfigürasyon
 // Fiyatlar Mart 2026 piyasa değerlerine göre belirlenmiştir (±%15 sapma gösterebilir)
+// Elektrik tarifesi: EPDK Karar No 13426 (Nisan 2025) — vergiler ve dağıtım dahil
 const config = {
   panel: {
     watt: 400,           // W — varsayılan panel gücü
@@ -30,7 +31,7 @@ const config = {
     offGrid: 0.68,
   },
   elektrik: {
-    birimFiyat: 7.5,     // ₺/kWh — konut kademeli tarife karma ortalaması
+    birimFiyat: 5.2,     // ₺/kWh — konut kademeli tarife karma ortalaması (vergiler + dağıtım dahil)
   },
 };
 
