@@ -4,21 +4,21 @@ import { Shield, Award, Wrench } from "lucide-react";
 export default function Hakkimda() {
   return (
     <div className="min-h-screen pt-36 pb-16 px-4">
-      <div className="max-w-2xl mx-auto">
+      <div className="max-w-3xl mx-auto">
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className="mb-10"
         >
-          <h1 className="text-2xl font-bold text-white mb-4">Hakkımızda</h1>
-          <p className="text-slate-300 leading-relaxed text-[15px] mb-4">
+          <h1 className="text-3xl sm:text-4xl font-bold text-white mb-4">Hakkımızda</h1>
+          <p className="text-slate-300 leading-relaxed text-base mb-4">
             Güneş enerjisi sektöründe uzun yıllar boyunca bireysel konutlardan endüstriyel
             tesislere kadar pek çok farklı ölçekte proje gerçekleştirdik. Bu süreçte gördük
             ki insanların büyük çoğunluğu yanlış ya da eksik bilgiyle karar veriyor; bu da
             hem maddi hem zaman kaybına neden oluyor.
           </p>
-          <p className="text-slate-300 leading-relaxed text-[15px]">
+          <p className="text-slate-300 leading-relaxed text-base">
             Solarlat'ı bu sorunu çözmek için kurduk. Amacımız, mühendislik bilgisini herkesin
             kolayca kullanabileceği, dürüst ve şeffaf bir araca dönüştürmek.
           </p>
@@ -41,7 +41,7 @@ export default function Hakkimda() {
                 <Icon className="w-5 h-5 text-orange-400" />
               </div>
               <p className="font-bold text-white">{label}</p>
-              <p className="text-xs text-slate-400 mt-1">{sub}</p>
+              <p className="text-sm text-slate-400 mt-1">{sub}</p>
             </motion.div>
           ))}
         </div>
@@ -53,7 +53,7 @@ export default function Hakkimda() {
           className="bg-slate-800/60 border border-slate-600/60 rounded-2xl p-6 backdrop-blur-sm"
         >
           <h2 className="font-bold text-white mb-3">Hesaplama Motoru Hakkında</h2>
-          <p className="text-sm text-slate-400 leading-relaxed">
+          <p className="text-base text-slate-300 leading-relaxed">
             Platformdaki hesaplama motoru, saha deneyimimizi ve GEPA (Güneş Enerjisi Potansiyel Atlası)
             verilerini birleştiriyor. Kullandığımız verim katsayıları ve PSH değerleri gerçek proje
             verileriyle doğrulanmıştır. Sonuçlar ±%15 hata payıyla gerçek kurulum değerlerine yakınsıyor.

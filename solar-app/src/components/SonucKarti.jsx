@@ -14,9 +14,9 @@ function MetrikKutu({ icon: Icon, label, deger, birim, renk = "orange" }) {
         <Icon className="w-5 h-5" />
       </div>
       <div>
-        <p className="text-xs font-medium opacity-60 text-slate-300">{label}</p>
+        <p className="text-xs font-medium text-slate-400">{label}</p>
         <p className="text-xl font-bold text-white">
-          {deger} <span className="text-sm font-normal text-slate-400">{birim}</span>
+          {deger} <span className="text-sm font-normal text-slate-300">{birim}</span>
         </p>
       </div>
     </div>
@@ -81,7 +81,7 @@ export default function SonucKarti({ sonuc, yorumlar, sistemTipi, sehir }) {
 
       {/* Maliyet dökümü */}
       <div className="bg-slate-800/60 rounded-xl border border-slate-600/60 p-5 backdrop-blur-sm">
-        <p className="font-semibold text-slate-200 mb-4">Maliyet Dökümü</p>
+        <p className="font-semibold text-white mb-4">Maliyet Dökümü</p>
         <div className="space-y-2.5">
           {[
             { label: "Panel", deger: maliyet.panel },
@@ -90,8 +90,8 @@ export default function SonucKarti({ sonuc, yorumlar, sistemTipi, sehir }) {
             { label: "Kurulum & İşçilik", deger: maliyet.kurulum },
           ].map(({ label, deger }) => (
             <div key={label} className="flex justify-between text-sm">
-              <span className="text-slate-400">{label}</span>
-              <span className="font-medium text-slate-200">{deger.toLocaleString("tr-TR")} ₺</span>
+              <span className="text-slate-300">{label}</span>
+              <span className="font-medium text-white">{deger.toLocaleString("tr-TR")} ₺</span>
             </div>
           ))}
           <div className="border-t border-slate-600/60 pt-2.5 flex justify-between font-bold text-white">
@@ -99,8 +99,8 @@ export default function SonucKarti({ sonuc, yorumlar, sistemTipi, sehir }) {
             <span>{maliyet.toplam.toLocaleString("tr-TR")} ₺</span>
           </div>
         </div>
-        <p className="text-xs text-slate-500 mt-3 flex items-center gap-1.5">
-          <Info className="w-3 h-3 shrink-0" />
+        <p className="text-sm text-slate-400 mt-3 flex items-center gap-1.5">
+          <Info className="w-3.5 h-3.5 shrink-0" />
           Fiyatlar yaklaşık değerdir; pazar koşullarına göre ±%15 değişebilir.
         </p>
       </div>
@@ -108,7 +108,7 @@ export default function SonucKarti({ sonuc, yorumlar, sistemTipi, sehir }) {
       {/* Akıllı yorumlar */}
       {yorumlar.length > 0 && (
         <div className="space-y-2">
-          <p className="font-semibold text-slate-200">Akıllı Yorumlar</p>
+          <p className="font-semibold text-white">Akıllı Yorumlar</p>
           {yorumlar.map((y, i) => (
             <motion.div
               key={i}

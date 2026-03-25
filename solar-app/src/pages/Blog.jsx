@@ -6,10 +6,10 @@ import blogYazilari from "../data/blogYazilari";
 export default function Blog() {
   return (
     <div className="min-h-screen pt-36 pb-16 px-4">
-      <div className="max-w-2xl mx-auto">
+      <div className="max-w-3xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-10">
           <h1 className="text-3xl sm:text-4xl font-bold text-white mb-3">Blog</h1>
-          <p className="text-slate-400 leading-relaxed">
+          <p className="text-slate-300 text-lg leading-relaxed">
             Güneş enerjisi sistemleri, mevzuat ve yatırım kararları hakkında rehber yazılar.
           </p>
         </motion.div>
@@ -40,9 +40,9 @@ export default function Blog() {
                 <h2 className="text-white font-bold text-lg mb-2 group-hover:text-orange-400 transition-colors leading-snug">
                   {baslik}
                 </h2>
-                <p className="text-slate-400 text-sm leading-relaxed mb-4">{ozet}</p>
+                <p className="text-slate-300 text-base leading-relaxed mb-4">{ozet}</p>
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-3 text-xs text-slate-500">
+                  <div className="flex items-center gap-3 text-sm text-slate-400">
                     <span>{tarih}</span>
                     <span className="flex items-center gap-1">
                       <Clock className="w-3 h-3" />

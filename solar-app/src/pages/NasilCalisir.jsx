@@ -56,7 +56,7 @@ const kavramlar = [
 export default function NasilCalisir() {
   return (
     <div className="min-h-screen pt-36 pb-16 px-4">
-      <div className="max-w-2xl mx-auto">
+      <div className="max-w-3xl mx-auto">
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -64,7 +64,7 @@ export default function NasilCalisir() {
           className="mb-12"
         >
           <h1 className="text-3xl sm:text-4xl font-bold text-white mb-3">Temel Kavramlar</h1>
-          <p className="text-slate-400 leading-relaxed">
+          <p className="text-slate-300 text-lg leading-relaxed">
             Hesaplayıcıyı kullanmadan önce kafanızda soru işareti bırakan terimler varsa
             bu sayfadaki kısa açıklamalara göz atın.
           </p>
@@ -82,7 +82,7 @@ export default function NasilCalisir() {
               <div className="text-2xl shrink-0 mt-0.5">{emoji}</div>
               <div>
                 <h2 className="font-bold text-white mb-1.5">{baslik}</h2>
-                <p className="text-sm text-slate-400 leading-relaxed">{aciklama}</p>
+                <p className="text-base text-slate-300 leading-relaxed">{aciklama}</p>
               </div>
             </motion.div>
           ))}
@@ -94,7 +94,7 @@ export default function NasilCalisir() {
           transition={{ delay: 0.55 }}
           className="mt-10 text-center"
         >
-          <p className="text-slate-400 mb-5 text-sm">Artık hazır mısınız?</p>
+          <p className="text-slate-300 mb-5">Artık hazır mısınız?</p>
           <Link
             to="/hesaplayici"
             className="inline-flex items-center gap-2 px-7 py-3.5 bg-linear-to-r from-orange-500 to-amber-500 text-white font-semibold rounded-full shadow-lg shadow-orange-500/25 hover:scale-105 transition-all duration-300"

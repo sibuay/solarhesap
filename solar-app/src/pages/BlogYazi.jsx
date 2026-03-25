@@ -9,12 +9,12 @@ function BolumRender({ bolum }) {
     case "h2":
       return <h2 className="text-xl font-bold text-white mt-8 mb-3">{bolum.icerik}</h2>;
     case "paragraf":
-      return <p className="text-slate-300 leading-relaxed text-[15px]">{bolum.icerik}</p>;
+      return <p className="text-slate-300 leading-relaxed text-base">{bolum.icerik}</p>;
     case "liste":
       return (
         <ul className="space-y-2">
           {bolum.maddeler.map((m, i) => (
-            <li key={i} className="flex gap-2 text-slate-300 text-[15px] leading-relaxed">
+            <li key={i} className="flex gap-2 text-slate-300 text-base leading-relaxed">
               <span className="mt-2 w-1.5 h-1.5 rounded-full bg-orange-400 shrink-0" />
               {m}
             </li>
@@ -23,14 +23,14 @@ function BolumRender({ bolum }) {
       );
     case "not":
       return (
-        <div className="bg-blue-500/10 border border-blue-500/25 rounded-xl px-5 py-4 text-sm text-blue-200 leading-relaxed">
+        <div className="bg-blue-500/10 border border-blue-500/25 rounded-xl px-5 py-4 text-base text-blue-200 leading-relaxed">
           <span className="font-semibold">Not: </span>
           {bolum.icerik}
         </div>
       );
     case "sonuc":
       return (
-        <div className="bg-orange-500/10 border border-orange-500/25 rounded-xl px-5 py-4 text-sm text-orange-200 leading-relaxed">
+        <div className="bg-orange-500/10 border border-orange-500/25 rounded-xl px-5 py-4 text-base text-orange-200 leading-relaxed">
           <span className="font-semibold">Sonuç: </span>
           {bolum.icerik}
         </div>
@@ -72,11 +72,11 @@ export default function BlogYazi() {
 
   return (
     <div className="min-h-screen pt-36 pb-16 px-4">
-      <div className="max-w-2xl mx-auto">
+      <div className="max-w-3xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
           <Link
             to="/blog"
-            className="inline-flex items-center gap-1.5 text-sm text-slate-400 hover:text-orange-400 mb-8 transition-colors"
+            className="inline-flex items-center gap-1.5 text-sm text-slate-300 hover:text-orange-400 mb-8 transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             Tüm yazılar
@@ -98,7 +98,7 @@ export default function BlogYazi() {
             {yazi.baslik}
           </h1>
 
-          <div className="flex items-center gap-3 text-xs text-slate-500 mb-8 pb-6 border-b border-slate-700/50">
+          <div className="flex items-center gap-3 text-sm text-slate-400 mb-8 pb-6 border-b border-slate-700/50">
             <span>{yazi.tarih}</span>
             <span className="flex items-center gap-1">
               <Clock className="w-3 h-3" />
@@ -114,7 +114,7 @@ export default function BlogYazi() {
 
           <div className="mt-10 bg-slate-800/60 border border-slate-600/60 rounded-2xl p-6 text-center backdrop-blur-sm">
             <p className="text-white font-semibold mb-2">Kendi sisteminizi hesaplayın</p>
-            <p className="text-slate-400 text-sm mb-5">
+            <p className="text-slate-300 text-base mb-5">
               Şehriniz ve tüketiminize göre panel sayısı, maliyet ve geri ödeme süresini anında görün.
             </p>
             <Link
@@ -127,7 +127,7 @@ export default function BlogYazi() {
 
           {digerler.length > 0 && (
             <div className="mt-10">
-              <p className="text-slate-400 text-sm font-medium mb-4">Diğer yazılar</p>
+              <p className="text-slate-200 font-semibold mb-4">Diğer yazılar</p>
               <div className="space-y-3">
                 {digerler.map(({ slug: s, baslik, okumaSuresi }) => (
                   <Link
@@ -135,10 +135,10 @@ export default function BlogYazi() {
                     to={`/blog/${s}`}
                     className="flex items-center justify-between gap-3 bg-slate-800/60 border border-slate-600/60 rounded-xl px-5 py-4 hover:border-orange-500/30 transition-all group"
                   >
-                    <p className="text-sm text-slate-300 group-hover:text-white transition-colors leading-snug">
+                    <p className="text-base text-slate-300 group-hover:text-white transition-colors leading-snug">
                       {baslik}
                     </p>
-                    <span className="text-xs text-slate-500 shrink-0 flex items-center gap-1">
+                    <span className="text-sm text-slate-400 shrink-0 flex items-center gap-1">
                       <Clock className="w-3 h-3" />
                       {okumaSuresi}
                     </span>

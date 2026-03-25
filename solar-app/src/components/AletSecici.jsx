@@ -54,14 +54,14 @@ export default function AletSecici({ onTuketimHesapla }) {
 
   return (
     <div className="space-y-3">
-      <p className="text-sm text-slate-400 mb-1">
+      <p className="text-sm text-slate-300 mb-2">
         Evinizdeki aletleri seçin ve günlük kullanım saatini ayarlayın.
       </p>
-      <p className="text-xs text-slate-500 mb-4 flex items-center gap-1.5">
+      <p className="text-sm text-slate-400 mb-4 flex items-center gap-1.5">
         <span className="inline-flex items-center justify-center w-4 h-4 rounded-full bg-yellow-500/20 border border-yellow-500/40 text-yellow-400 text-[10px]">⚡</span>
         Aynı anda çalışabilecek aletleri sarı ⚡ ile işaretleyin — bu değer inverter kapasitesini belirler.
       </p>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
         {aletler.map((alet) => {
           const secili = !!secimler[alet.id];
           const esZamanli = secimler[alet.id]?.esZamanli ?? false;
@@ -82,10 +82,10 @@ export default function AletSecici({ onTuketimHesapla }) {
                 >
                   <span className="text-xl">{alet.emoji}</span>
                   <div>
-                    <p className={`text-sm font-medium ${secili ? "text-orange-400" : "text-slate-300"}`}>
+                    <p className={`text-sm font-medium ${secili ? "text-orange-400" : "text-slate-200"}`}>
                       {alet.ad}
                     </p>
-                    <p className="text-xs text-slate-500">
+                    <p className="text-xs text-slate-400">
                       {alet.watt} W{alet.tepeWatt ? ` · tepe ${alet.tepeWatt} W` : ""}
                     </p>
                   </div>

@@ -75,7 +75,7 @@ function SSSItem({ soru, cevap, acik, onToggle }) {
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.25, ease: "easeInOut" }}
           >
-            <p className="px-5 pb-5 text-sm text-slate-400 leading-relaxed border-t border-slate-700/40 pt-4">
+            <p className="px-5 pb-5 text-base text-slate-300 leading-relaxed border-t border-slate-700/40 pt-4">
               {cevap}
             </p>
           </motion.div>
@@ -108,10 +108,10 @@ export default function SSS() {
 
   return (
     <div className="min-h-screen pt-36 pb-16 px-4">
-      <div className="max-w-2xl mx-auto">
+      <div className="max-w-3xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-10">
           <h1 className="text-3xl sm:text-4xl font-bold text-white mb-3">Sık Sorulan Sorular</h1>
-          <p className="text-slate-400 leading-relaxed">
+          <p className="text-slate-300 text-lg leading-relaxed">
             Güneş enerjisi sistemleri hakkında en çok merak edilen sorular.
           </p>
         </motion.div>
@@ -141,7 +141,7 @@ export default function SSS() {
           className="mt-10 bg-slate-800/60 border border-slate-600/60 rounded-2xl p-6 text-center backdrop-blur-sm"
         >
           <p className="text-white font-semibold mb-2">Sorunuz burada yok mu?</p>
-          <p className="text-slate-400 text-sm mb-5">
+          <p className="text-slate-300 text-base mb-5">
             Projenize özel soruları doğrudan bizimle paylaşın.
           </p>
           <Link

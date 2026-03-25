@@ -57,7 +57,7 @@ const renkler = {
 export default function Hizmetlerimiz() {
   return (
     <div className="min-h-screen pt-36 pb-16 px-4">
-      <div className="max-w-2xl mx-auto">
+      <div className="max-w-3xl mx-auto">
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -65,7 +65,7 @@ export default function Hizmetlerimiz() {
           className="mb-12"
         >
           <h1 className="text-3xl sm:text-4xl font-bold text-white mb-3">Hizmetlerimiz</h1>
-          <p className="text-slate-400 leading-relaxed">
+          <p className="text-slate-300 text-lg leading-relaxed">
             Güneş enerjisine geçiş sürecinizde ihtiyacınız olan her şey — ücretsiz hesaplamadan
             uzman danışmanlığa kadar.
           </p>
@@ -93,13 +93,13 @@ export default function Hizmetlerimiz() {
                         {etiket}
                       </span>
                     </div>
-                    <p className="text-sm text-slate-400 leading-relaxed">{aciklama}</p>
+                    <p className="text-base text-slate-300 leading-relaxed">{aciklama}</p>
                   </div>
                 </div>
 
                 <ul className="space-y-2 mb-5 ml-1">
                   {maddeler.map((madde) => (
-                    <li key={madde} className="flex items-start gap-2 text-sm text-slate-300">
+                    <li key={madde} className="flex items-start gap-2 text-base text-slate-200">
                       <CheckCircle className={`w-4 h-4 shrink-0 mt-0.5 ${r.check}`} />
                       {madde}
                     </li>

@@ -77,7 +77,7 @@ export default function Hesaplayici() {
   if (!mod) {
     return (
       <div className="min-h-screen flex items-center justify-center px-4 pt-24 pb-16">
-        <div className="max-w-2xl w-full">
+        <div className="max-w-4xl w-full">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -138,12 +138,12 @@ export default function Hesaplayici() {
 
   return (
     <div className="min-h-screen pt-20 pb-10 px-4">
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-4xl mx-auto">
         <motion.button
           onClick={() => { setMod(null); setSonuc(null); setAnlikGucW(0); setAnlikGucKwInput(""); }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="flex items-center gap-1.5 text-sm text-slate-400 hover:text-orange-400 mb-8 transition-colors"
+          className="flex items-center gap-1.5 text-sm text-slate-400 hover:text-orange-400 mb-6 transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
           Mod seçimine dön
@@ -152,7 +152,7 @@ export default function Hesaplayici() {
         <motion.h1
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-2xl font-bold text-white mb-8"
+          className="text-2xl font-bold text-white mb-6"
         >
           {mod === "bireysel" ? "🏠 Bireysel Mod" : "📊 Teknik / İşletme Modu"}
         </motion.h1>
@@ -164,7 +164,7 @@ export default function Hesaplayici() {
           className="bg-slate-800/60 rounded-2xl border border-slate-600/60 p-7 mb-6 backdrop-blur-sm"
         >
           {/* Tüketim */}
-          <h2 className="font-semibold text-slate-200 mb-4 flex items-center gap-2">
+          <h2 className="font-semibold text-slate-100 mb-4 flex items-center gap-2">
             <span className="w-6 h-6 rounded-full bg-orange-500/20 border border-orange-500/30 text-orange-400 text-xs flex items-center justify-center font-bold">1</span>
             Aylık Tüketim
           </h2>
@@ -177,7 +177,7 @@ export default function Hesaplayici() {
           ) : (
             <div className="space-y-4">
               <div>
-                <label className="block text-sm text-slate-400 mb-2">Aylık tüketim (kWh)</label>
+                <label className="block text-sm text-slate-300 mb-2">Aylık tüketim (kWh)</label>
                 <input
                   type="number"
                   value={aylikTuketim}
@@ -195,7 +195,7 @@ export default function Hesaplayici() {
                     className={`px-4 py-2 rounded-lg text-sm font-medium border transition-all ${
                       aylikTuketim === String(v)
                         ? "border-orange-500/60 bg-orange-500/20 text-orange-400"
-                        : "border-slate-500/60 text-slate-400 hover:border-orange-500/40 hover:text-slate-200"
+                        : "border-slate-500/60 text-slate-300 hover:border-orange-500/40 hover:text-slate-100"
                     }`}
                   >
                     {v} kWh
@@ -203,10 +203,10 @@ export default function Hesaplayici() {
                 ))}
               </div>
               <div>
-                <label className="block text-sm text-slate-400 mb-1">
-                  Anlık maksimum yük (kW) <span className="text-slate-600">— opsiyonel</span>
+                <label className="block text-sm text-slate-300 mb-1">
+                  Anlık maksimum yük (kW) <span className="text-slate-500">— opsiyonel</span>
                 </label>
-                <p className="text-xs text-slate-500 mb-2">
+                <p className="text-sm text-slate-400 mb-2">
                   Aynı anda çalışabilecek tüm aletlerin toplam wattı. İnverter bu değerden küçük seçilemez.
                 </p>
                 <input
@@ -224,7 +224,7 @@ export default function Hesaplayici() {
 
           {/* Şehir */}
           <div className="mt-8">
-            <h2 className="font-semibold text-slate-200 mb-4 flex items-center gap-2">
+            <h2 className="font-semibold text-slate-100 mb-4 flex items-center gap-2">
               <span className="w-6 h-6 rounded-full bg-orange-500/20 border border-orange-500/30 text-orange-400 text-xs flex items-center justify-center font-bold">2</span>
               Şehir Seçimi
             </h2>
@@ -244,7 +244,7 @@ export default function Hesaplayici() {
 
           {/* Sistem tipi */}
           <div className="mt-8">
-            <h2 className="font-semibold text-slate-200 mb-4 flex items-center gap-2">
+            <h2 className="font-semibold text-slate-100 mb-4 flex items-center gap-2">
               <span className="w-6 h-6 rounded-full bg-orange-500/20 border border-orange-500/30 text-orange-400 text-xs flex items-center justify-center font-bold">3</span>
               Sistem Tipi
             </h2>
@@ -262,7 +262,7 @@ export default function Hesaplayici() {
                 >
                   <span className="text-2xl block mb-2">{s.emoji}</span>
                   <Tooltip aciklama={s.aciklama}>
-                    <span className={`font-semibold text-sm ${sistemTipi === s.deger ? "text-orange-400" : "text-slate-300"}`}>
+                    <span className={`font-semibold text-sm ${sistemTipi === s.deger ? "text-orange-400" : "text-slate-200"}`}>
                       {s.etiket}
                     </span>
                   </Tooltip>
