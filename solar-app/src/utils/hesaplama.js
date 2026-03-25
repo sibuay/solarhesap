@@ -98,10 +98,10 @@ export function akillıYorumlar({ sehir, sistemTipi, aylikTuketim, sonuc }) {
     });
   }
 
-  if (sonuc.sistemGucu > 10) {
+  if (sonuc.sistemGucu > 25) {
     yorumlar.push({
       tip: "bilgi",
-      mesaj: "10 kW üzeri sistemler için lisanssız üretim mevzuatı kapsamında EPDK'ya başvuru gerekebilir. Kurulum öncesi ilgili birimlerle iletişime geçin.",
+      mesaj: "25 kW üzeri sistemler için EPDK'dan üretim lisansı alınması gerekmektedir. Kurulum öncesi ilgili birimlerle iletişime geçin.",
     });
   }
 

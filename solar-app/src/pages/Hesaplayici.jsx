@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import pshData from "../data/pshData";
 import AletSecici from "../components/AletSecici";
@@ -35,12 +36,20 @@ const sistemTipleri = [
 ];
 
 export default function Hesaplayici() {
+  const location = useLocation();
   const [mod, setMod] = useState(null);
   const [aylikTuketim, setAylikTuketim] = useState("");
   const [anlikGucW, setAnlikGucW] = useState(0);
   const [anlikGucKwInput, setAnlikGucKwInput] = useState("");
   const [sehir, setSehir] = useState("");
   const [sistemTipi, setSistemTipi] = useState("on-grid");
+
+  // İl sayfasından gelen şehir pre-fill
+  useEffect(() => {
+    if (location.state?.sehir) {
+      setSehir(location.state.sehir);
+    }
+  }, [location.state]);
   const [sonuc, setSonuc] = useState(null);
   const [yorumlar, setYorumlar] = useState([]);
   const [hata, setHata] = useState("");

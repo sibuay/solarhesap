@@ -26,6 +26,53 @@
 
     <!-- Theme -->
     <meta name="theme-color" content="#0f172a" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Solarlat",
+      "url": "https://www.solarlat.com",
+      "email": "info@solarlat.com",
+      "description": "Güneş enerjisi danışmanlık ve hesaplama platformu. Türkiye'nin 81 ili için mühendis onaylı güneş enerjisi sistemi hesaplayıcısı.",
+      "inLanguage": "tr"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Solarlat",
+      "url": "https://www.solarlat.com",
+      "description": "Türkiye'nin 81 ili için güneş enerjisi sistemi hesaplayıcısı. Panel sayısı, inverter kapasitesi, kurulum maliyeti ve geri ödeme süresini anında hesaplayın.",
+      "inLanguage": "tr",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://www.solarlat.com/il/{sehir}"
+        },
+        "query-input": "required name=sehir"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Güneş Enerjisi Sistemi Hesaplayıcı",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Web",
+      "url": "https://www.solarlat.com/hesaplayici",
+      "description": "Aylık tüketim, şehir ve sistem tipine göre güneş enerjisi sistemi boyutlandırma hesaplayıcısı.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "TRY"
+      }
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>

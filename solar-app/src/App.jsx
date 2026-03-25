@@ -6,6 +6,11 @@ import NasilCalisir from "./pages/NasilCalisir";
 import Hizmetlerimiz from "./pages/Hizmetlerimiz";
 import Hakkimda from "./pages/Hakkimda";
 import Iletisim from "./pages/Iletisim";
+import SSS from "./pages/SSS";
+import Blog from "./pages/Blog";
+import BlogYazi from "./pages/BlogYazi";
+import Iller from "./pages/Iller";
+import IlDetay from "./pages/IlDetay";
 import SolarBackground from "./components/SolarBackground";
 import Footer from "./components/Footer";
 
@@ -22,6 +27,11 @@ export default function App() {
           <Route path="/hizmetlerimiz" element={<Hizmetlerimiz />} />
           <Route path="/hakkimda" element={<Hakkimda />} />
           <Route path="/iletisim" element={<Iletisim />} />
+          <Route path="/sss" element={<SSS />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogYazi />} />
+          <Route path="/iller" element={<Iller />} />
+          <Route path="/il/:slug" element={<IlDetay />} />
         </Routes>
         <Footer />
       </div>
