@@ -1,5 +1,198 @@
 const blogYazilari = [
   {
+    slug: "gunes-enerjisi-taktirmali-miyim",
+    baslik: "Güneş enerjisi taktırmalı mıyım? Karar vermeden önce dürüst yanıtlar",
+    ozet:
+      "Paramın karşılığını alır mıyım? Kurulum zor olur mu? Sorun çıkar mı? Komşum kurdu, ben de kurmak zorunda mıyım? Güneş enerjisi düşünen herkesin aklındaki sorulara dürüst yanıtlar.",
+    tarih: "25 Mart 2026",
+    okumaSuresi: "7 dk",
+    etiketler: ["karar", "başlangıç", "sık sorulan sorular", "yatırım"],
+    bolumler: [
+      {
+        tip: "paragraf",
+        icerik:
+          "Güneş enerjisi son yıllarda Türkiye'de çok konuşulan bir konu. Komşunuz kurdu, sosyal medyada reklamları görüyorsunuz, elektrik faturanız kabarıyor. 'Ben de kurmalı mıyım?' sorusu aklınızın bir köşesinde duruyor ama kafanız da karışık. Bu yazıda satış konuşması yapmadan, sık sorulan soruları gerçekçi biçimde yanıtlamaya çalışacağız.",
+      },
+      {
+        tip: "h2",
+        icerik: "\"Paramın karşılığını gerçekten alır mıyım?\"",
+      },
+      {
+        tip: "paragraf",
+        icerik:
+          "Doğru koşullarda evet — ama 'doğru koşullar' önemli. Türkiye'de güneşlenme süresi yüksek, elektrik fiyatları son yıllarda ciddi oranda arttı. Bu iki faktör birleşince güneş enerjisi yatırımı on-grid sistemlerde genellikle 4–9 yıl içinde kendini geri ödeyen bir yatırıma dönüşüyor. Sonraki 15–20 yıl ise neredeyse sıfır maliyetle enerji üretmeye devam ediyor.",
+      },
+      {
+        tip: "liste",
+        maddeler: [
+          "Aylık faturanız 1.500 ₺'nin üzerindeyse güneş enerjisi çok daha çabuk amorti eder.",
+          "Güneşlenme süresi yüksek şehirlerde (Güneydoğu, Ege, Akdeniz) geri ödeme süresi kısalır.",
+          "Sistemi satın alıp kurmak yerine kiralama veya taksit seçenekleri de varsa nakit çıkışı olmadan başlanabilir.",
+          "Karşılık alamamanın temel riski: aşırı pahalı veya düşük kaliteli ürün seçmek.",
+        ],
+      },
+      {
+        tip: "h2",
+        icerik: "\"Kurulum zor mu? Çok uğraştırır mı?\"",
+      },
+      {
+        tip: "paragraf",
+        icerik:
+          "Kurulum süreci büyük ölçüde firma tarafından yürütülür. Sizden beklenen: birkaç form doldurmak, elektrik dağıtım şirketine başvuruyu onaylamak ve kurulum günü evde olmak. Çatıya çıkma, kablo çekme, sayaç değişimi — bunların tamamı yetkili kurulum ekibi tarafından yapılır. Süreç başlangıçtan devreye almaya kadar genellikle 2–6 hafta alır.",
+      },
+      {
+        tip: "not",
+        icerik:
+          "Dikkat edilmesi gereken nokta: dağıtım şirketi başvuru onayı bazen 4–12 haftaya uzayabiliyor. Bu süre firmadan değil bürokrasiden kaynaklanıyor. Sabırlı olmak gerekiyor.",
+      },
+      {
+        tip: "h2",
+        icerik: "\"Kurulduktan sonra sorun çıkar mı? Sürekli bakım gerektirir mi?\"",
+      },
+      {
+        tip: "paragraf",
+        icerik:
+          "Güneş sistemleri hareketli parçası olmayan, sessiz ve düşük bakım gerektiren sistemlerdir. Kaliteli bir kurulumda ilk 10 yılda ciddi bir arıza nadir yaşanır. Yapmanız gereken tek şey yılda birkaç kez panel temizliği ve yılda bir teknik kontrol. Üretim verilerinizi takip etmek için çoğu inverter üreticisinin ücretsiz mobil uygulaması var.",
+      },
+      {
+        tip: "liste",
+        maddeler: [
+          "Paneller: 25–30 yıl ömür, yıllık %0.5 verim kaybı — pratikte çok az bozulur.",
+          "İnverter: 10–15 yıl ömür; en sık değişen bileşen budur.",
+          "Bakım maliyeti: Yılda 500–1.500 ₺ (temizlik + kontrol) düzeyinde, oldukça düşük.",
+          "Garanti: Kaliteli panellerde 25 yıl üretim garantisi standart hale geldi.",
+        ],
+      },
+      {
+        tip: "h2",
+        icerik: "\"Çatım uygun mu? Nasıl anlarım?\"",
+      },
+      {
+        tip: "paragraf",
+        icerik:
+          "Birkaç temel kriter vardır. Çatınız güneye veya güneydoğuya/güneybatıya bakıyorsa idealdir; doğu-batı bakan çatılar da çalışır ama verim %10–20 daha düşük olur. Çatı üzerinde büyük gölge yaratan engeller (baca, çıkıntı, bitişik bina) varsa dikkatli analiz yapılması gerekir. Çatı yaşı ve taşıma kapasitesi de değerlendirilmeli — 10 yaşından eski kiremit çatılarda önce yapı kontrolü önerilir.",
+      },
+      {
+        tip: "liste",
+        maddeler: [
+          "Güneye bakan çatı + gölgesiz → ideal koşul.",
+          "Doğu veya batı bakışlı çatı → kullanılabilir ama verim daha düşük; hesaplamayı buna göre yapın.",
+          "Kuzeye bakan çatı → önerilemez.",
+          "Düz teras → eğim ayarlı montajla her yönde kurulum mümkün.",
+          "Komşu bina veya ağaç gölgesi varsa → kurulum öncesi gölge analizi yaptırın.",
+        ],
+      },
+      {
+        tip: "h2",
+        icerik: "\"Hangi sistemi almalıyım? On-grid mi, hibrit mi?\"",
+      },
+      {
+        tip: "paragraf",
+        icerik:
+          "Bölgenizde elektrik kesintisi nadir yaşanıyor ve sadece faturanızı düşürmek istiyorsanız on-grid (şebeke bağlantılı, bataryasız) sistem yeterlidir. Hem daha ucuz hem de geri ödeme süresi daha kısadır. Sık kesinti yaşıyorsanız veya gündüz evde olmadığınız için ürettiğiniz enerjiyi biriktirip akşam kullanmak istiyorsanız hibrit (bataryalı) sistemi değerlendirin.",
+      },
+      {
+        tip: "h2",
+        icerik: "\"Kiracıysam ne yapabilirim?\"",
+      },
+      {
+        tip: "paragraf",
+        icerik:
+          "Kiracı olarak çatıya güneş paneli kurmak hukuki açıdan karmaşıktır; mal sahibinin onayı ve binada kat mülkiyeti varsa tüm kat maliklerinin izni gerekebilir. Ancak bazı alternatifler var: balkon tipi küçük sistemler, taşınabilir panel setleri veya topluluk güneş projelerine katılım bu boşluğu kısmen dolduruyor. Şimdilik en pratik yol ev sahibiyle anlaşmak ve elektrik tasarrufunu kira indirimiyle dengelemek.",
+      },
+      {
+        tip: "h2",
+        icerik: "\"Komşum kurdu, ben de kurmak zorunda mıyım?\"",
+      },
+      {
+        tip: "paragraf",
+        icerik:
+          "Hayır. Güneş enerjisi herkes için doğru seçenek değil. Aylık faturanız düşükse (örneğin 500 ₺ altındaysa), çatınız kuzey bakışlıysa veya yakında taşınma planınız varsa acele etmenize gerek yok. Karar verirken başkalarının deneyimine değil, kendi tüketim profilinize, çatı koşullarınıza ve bütçenize bakın.",
+      },
+      {
+        tip: "sonuc",
+        icerik:
+          "Güneş enerjisi doğru koşullarda güçlü bir yatırım. Ama 'doğru koşullar' kişiye göre değişir. Hesaplayıcımızla kendi eviniz için gerçekçi bir tahmin yapabilir, sonra karar verebilirsiniz — baskı yok.",
+      },
+    ],
+  },
+  {
+    slug: "gunes-paneli-bakimi-rehberi",
+    baslik: "Güneş paneli bakımı: Ne sıklıkla, nasıl yapılmalı?",
+    ozet:
+      "Güneş panelleri az bakım ister ama sıfır bakım istemez. Türkiye iklimine özgü temizlik sıklığı, nelere dikkat edilmesi gerektiği ve kaçınılması gereken hatalar.",
+    tarih: "22 Mart 2026",
+    okumaSuresi: "5 dk",
+    etiketler: ["bakım", "temizlik", "verim", "uzun ömür"],
+    bolumler: [
+      {
+        tip: "paragraf",
+        icerik:
+          "Güneş panelleri, teknik anlamda az bakım gerektiren sistemlerdir. Hareketli parça yok, yağlama yok, filtre değişimi yok. Ama bu 'hiç bakım gerekmez' anlamına gelmiyor. Özellikle Türkiye'nin toz yüklü, tarımsal veya kalabalık şehir ortamlarında yılda birkaç temizlik ve kontrol ihmal edilmemeli.",
+      },
+      {
+        tip: "h2",
+        icerik: "Kirlilik üretimi nasıl etkiler?",
+      },
+      {
+        tip: "paragraf",
+        icerik:
+          "Araştırmalar, temizlenmemiş panellerin veriminin toz, kuş pisliği ve yaprak birikimi nedeniyle %10–25 oranında düşebileceğini gösteriyor. 5 kW'lık bir sistemde %15 verim kaybı, yılda yaklaşık 1.000–1.500 kWh üretim farkı anlamına gelir — bu da ciddi bir mali kayıp.",
+      },
+      {
+        tip: "h2",
+        icerik: "Türkiye'ye özgü temizlik takvimi",
+      },
+      {
+        tip: "liste",
+        maddeler: [
+          "İç Anadolu (Konya, Ankara, Kayseri): Toz ve kurak hava nedeniyle 3 ayda bir temizlik önerilir.",
+          "Ege ve Akdeniz kıyıları (İzmir, Antalya): Tuz buharı ve çiçek tozu için yılda 2–3 temizlik yeterlidir.",
+          "Marmara ve kuzeybatı: Yağış oranı yüksek olduğundan yılda 2 temizlik genellikle yeterlidir.",
+          "Tarım alanı yakını: Sürüm dönemlerinde toz yoğunlaşır; mevsimlere göre ekstra temizlik gerekebilir.",
+        ],
+      },
+      {
+        tip: "h2",
+        icerik: "Doğru temizlik nasıl yapılır?",
+      },
+      {
+        tip: "liste",
+        maddeler: [
+          "Sabahın erken saatlerinde veya akşamüstü temizleyin; sıcak panel üzerine soğuk su dökmek termal şok yapabilir.",
+          "Yumuşak kauçuk kenarlı fırça ve bol su kullanın; deterjan veya aşındırıcı madde kullanmayın.",
+          "Yüksek basınçlı yıkama makinesi panel yüzeyini çizebilir — önerilmez.",
+          "Kuş pisliği lokalize kirlilik yaratır ('hot spot'); fark ederseniz hemen temizleyin.",
+          "Çatıya çıkarken güvenlik ekipmanı (emniyet kemeri, kaymaz ayakkabı) zorunludur.",
+        ],
+      },
+      {
+        tip: "not",
+        icerik:
+          "Yıllık izleme verilerinize bakın. Üretim düşüşü sadece kirlilikten kaynaklanmıyor olabilir; inverter arızası veya gölgeleme de etken olabilir. Mobil uygulama veya inverter ekranı üzerinden aylık üretimi takip edin.",
+      },
+      {
+        tip: "h2",
+        icerik: "Teknik kontrol listesi (yılda bir)",
+      },
+      {
+        tip: "liste",
+        maddeler: [
+          "Panel bağlantı kabloları ve konektörler gevşemiş mi? Korozyon var mı?",
+          "Çatı montaj rayları sağlam mı? Rüzgar veya don nedeniyle deformasyon oluşmuş mu?",
+          "İnverter hata loglarında tekrarlayan alarm var mı?",
+          "Akıllı izleme sistemi varsa yıllık baz üretim ile karşılaştırma yapılmalı.",
+          "Yakın çevrede yeni gölge kaynağı (ağaç büyümesi, bina yapımı) oluştu mu?",
+        ],
+      },
+      {
+        tip: "sonuc",
+        icerik:
+          "Yılda iki temizlik ve bir teknik kontrol ile güneş sisteminiz 25 yıl boyunca yüksek verimde çalışabilir. Bakım maliyeti ihmal edilebilir düzeyde; ama ihmal edilirse kayıp ciddi olabilir.",
+      },
+    ],
+  },
+  {
     slug: "on-grid-mi-hibrit-mi",
     baslik: "On-grid mi, hibrit mi? İkisi arasındaki farkı net anlayın",
     ozet:
@@ -62,6 +255,173 @@ const blogYazilari = [
         tip: "sonuc",
         icerik:
           "Hesaplayıcımızı kullanarak hem on-grid hem hibrit için ayrı hesaplama yapabilir, maliyet ve geri ödeme farklarını karşılaştırabilirsiniz.",
+      },
+    ],
+  },
+  {
+    slug: "bifasyal-gunes-panelleri-nedir",
+    baslik: "Bifasyal güneş panelleri: Değer mi, değmez mi?",
+    ozet:
+      "Çift taraflı çalışan bifasyal paneller artık piyasada sıkça görülüyor. Standart monofasyal panele göre gerçekten daha fazla üretim sağlıyor mu? Maliyet-fayda analizi.",
+    tarih: "18 Mart 2026",
+    okumaSuresi: "6 dk",
+    etiketler: ["bifasyal", "panel teknolojisi", "verim", "yeni nesil"],
+    bolumler: [
+      {
+        tip: "paragraf",
+        icerik:
+          "Son yıllarda güneş paneli piyasasında en çok konuşulan gelişmelerden biri bifasyal (çift taraflı) panel teknolojisi. Adından da anlaşılacağı gibi bu paneller, sadece ön yüzden değil; arka yüzden de güneş ışığını elektriğe çeviriyor. Peki bu teknoloji Türkiye'deki konut ve işletme kurulumlarında gerçekten avantaj sağlıyor mu?",
+      },
+      {
+        tip: "h2",
+        icerik: "Bifasyal panel nasıl çalışır?",
+      },
+      {
+        tip: "paragraf",
+        icerik:
+          "Standart (monofasyal) panellerin arka yüzü opak bir tabaka ile kapatılmıştır; sadece ön yüz enerji üretir. Bifasyal panellerde arka yüz şeffaf cam veya polimer malzemeyle kaplanmıştır. Arka yüz, zemin veya çatı yüzeyinden yansıyan ışığı (albedo ışığı) toplayarak ek enerji üretir. Tipik arka yüz kazanımı kurulum koşuluna göre %5–25 arasında değişir.",
+      },
+      {
+        tip: "h2",
+        icerik: "Ne kadar fazla üretim beklenir?",
+      },
+      {
+        tip: "liste",
+        maddeler: [
+          "Beyaz çakıl veya açık renk beton zemin üzerine montaj: %15–25 ek kazanım mümkün.",
+          "Standart kiremitli konut çatısı (koyu renk): %3–8 ek kazanım — sınırlı etki.",
+          "Yüksek montaj (tarla tipi, topraktan 1 m+ yüksekte): En iyi sonuç; %10–20 kazanım.",
+          "Çatı üzeri düşük boşluklu montaj: Arka yüz yeterince ışık göremeyeceğinden bifasyal avantajı azalır.",
+        ],
+      },
+      {
+        tip: "not",
+        icerik:
+          "Türkiye'deki konut çatılarının büyük çoğunluğunda panel ile çatı arasındaki boşluk 10–15 cm'dir. Bu koşullarda bifasyal arka yüz kazanımı oldukça sınırlı kalır — genellikle %3–7. Yüksek beklentilere girmemek gerekir.",
+      },
+      {
+        tip: "h2",
+        icerik: "Maliyet farkı ne kadar?",
+      },
+      {
+        tip: "paragraf",
+        icerik:
+          "2026 yılı itibarıyla bifasyal paneller, eşdeğer güçteki monofasyal panellere göre genellikle %8–15 daha pahalıdır. Örneğin 5 kW'lık bir sistemde bu fark yaklaşık 8.000–15.000 ₺ anlamına gelir. Konut çatısında beklenen %5 ek üretim bu farkı geri kazanmak için 5–8 yıl daha süre gerektirebilir.",
+      },
+      {
+        tip: "h2",
+        icerik: "Bifasyal panel ne zaman mantıklı?",
+      },
+      {
+        tip: "liste",
+        maddeler: [
+          "Tarla tipi (ground-mount) kurulumlar: Zemin yansıması maksimum, açık ve yüksek montaj mümkün.",
+          "Açık renk çatı veya terasa montaj: Beyaz teraslarda anlamlı ek kazanım.",
+          "Çift taraflı güneş alanları (agrivoltaik projeler): Hem üst hem de gölge tarafından ışık toplanır.",
+          "Dikey montaj (çit veya cephe uygulamaları): Sabah-akşam güneşini ayrı ayrı toplar.",
+        ],
+      },
+      {
+        tip: "h2",
+        icerik: "Monofasyal ne zaman yeterli?",
+      },
+      {
+        tip: "paragraf",
+        icerik:
+          "Standart konut çatısına, düşük boşluklu montajla kurulum yapılacaksa monofasyal panel çoğu durumda daha iyi maliyet-verim dengesi sunar. Bifasyal primin getireceği ek üretim, ek maliyeti karşılamayabilir. Bu kararı doğru vermek için montaj detaylarını kurulum firmasıyla birlikte değerlendirin.",
+      },
+      {
+        tip: "sonuc",
+        icerik:
+          "Bifasyal panel teknolojisi gelişmeye devam ediyor ve fiyatlar düşüyor. Şu an için tarla tipi ve yüksek montajlı sistemlerde açık avantaj sağlıyor; tipik konut çatısında ise fiyat farkı çoğunlukla kazanımı geçiyor.",
+      },
+    ],
+  },
+  {
+    slug: "ev-batarya-sistemi-rehberi",
+    baslik: "Ev batarya sistemleri: Hangi durumda değer, hangi durumda değmez?",
+    ozet:
+      "Batarya sistemi almak mı istiyorsunuz? LFP ve NMC arasındaki fark, kapasite nasıl seçilir, gerçekçi maliyet ve geri ödeme süreleri — tüm sorulara net yanıtlar.",
+    tarih: "15 Mart 2026",
+    okumaSuresi: "7 dk",
+    etiketler: ["batarya", "enerji depolama", "LFP", "hibrit", "maliyet"],
+    bolumler: [
+      {
+        tip: "paragraf",
+        icerik:
+          "Elektrik tarifelerindeki artışlar ve sık yaşanan kesintilerle birlikte ev batarya sistemlerine ilgi hızla arttı. Ama batarya eklemek her durumda karlı bir karar değil. Hangi koşullarda batarya mantıklı, kapasite nasıl seçilmeli ve hangi teknolojiyi tercih etmeli — bu yazıda gerçekçi bir çerçeve çizmeye çalışıyoruz.",
+      },
+      {
+        tip: "h2",
+        icerik: "LFP mi, NMC mi? İki ana batarya teknolojisi",
+      },
+      {
+        tip: "liste",
+        maddeler: [
+          "LFP (Lityum Demir Fosfat): Daha düşük enerji yoğunluğu ama üstün güvenlik, uzun ömür (4.000–6.000 döngü), daha az ısınma. Konut sistemleri için standart tercih haline geldi.",
+          "NMC (Lityum Nikel Mangan Kobalt): Daha yüksek enerji yoğunluğu, daha kompakt boyut. Ancak LFP'ye kıyasla daha kısa ömür (2.000–3.000 döngü) ve daha yüksek termal risk.",
+          "Sonuç: Konut ve küçük işletme uygulamaları için LFP tercih edilmeli. NMC araçlarda ve alan kısıtlı özel projelerde öne çıkıyor.",
+        ],
+      },
+      {
+        tip: "h2",
+        icerik: "Kapasite nasıl belirlenir?",
+      },
+      {
+        tip: "paragraf",
+        icerik:
+          "İhtiyaç duyulan batarya kapasitesi iki ana parametreye bağlıdır: gece tüketiminiz ve kesinti süresince ayakta tutmak istediğiniz yük. Türkiye'de ortalama bir hanenin gece saati tüketimi 5–8 kWh arasındadır. Buna göre 5–10 kWh'lik bir batarya, kesintisiz güneş enerjisi kullanımı için çoğu haneye yeterlidir.",
+      },
+      {
+        tip: "liste",
+        maddeler: [
+          "Sadece aydınlatma + beyaz eşya (buzdolabı, çamaşır makinesi): 5 kWh batarya gece ihtiyacını karşılar.",
+          "Klima veya elektrikli ısıtma dahil: 10–15 kWh kapasiteye ihtiyaç duyulabilir.",
+          "Gün içinde birden fazla kesinti beklentisi varsa verim kaybı hesabıyla %20 fazlası önerilir.",
+          "Gerçek kullanım senaryonuzu görmek için en az 3 aylık fatura + tüketim profilini inceleyin.",
+        ],
+      },
+      {
+        tip: "h2",
+        icerik: "2026 yılında batarya maliyeti ne kadar?",
+      },
+      {
+        tip: "paragraf",
+        icerik:
+          "Türkiye'de 2026 itibarıyla kurulu LFP ev bataryaları için yaklaşık fiyatlar: 5 kWh sistem (inverter dahil) 60.000–90.000 ₺, 10 kWh sistem 110.000–160.000 ₺ arasında seyretmektedir. Bu fiyatlara kurulum işçiliği dahil değildir. Batarya fiyatları küresel ölçekte düşmeye devam ettiğinden 2027–2028 döneminde belirgin indirim beklenmektedir.",
+      },
+      {
+        tip: "h2",
+        icerik: "Batarya ne zaman mantıklı, ne zaman değmez?",
+      },
+      {
+        tip: "liste",
+        maddeler: [
+          "MANTIKLI — Sık elektrik kesintisi (günde 1+ saat): Kesinti kaybı ve iş/yaşam kalitesi etkisi batarya maliyetini haklı kılabilir.",
+          "MANTIKLI — Gündüz evde olmayan çalışan hane: Üretilen enerjiyi depolayıp akşam kullanmak net metering'e göre daha avantajlı olabilir (tarife yapısına bağlı).",
+          "MANTIKLI — Pik tarife farkı yüksekse: Gece ucuz, gündüz pahalı tarife uygulanıyorsa batarya arbitrajı çalışır.",
+          "DEĞMEZ — Sık kesinti yoksa ve net metering çalışıyorsa: Fazla üretimi şebekeye aktarmak ve mahsup etmek genellikle daha kısa geri ödeme sağlar.",
+          "DEĞMEZ — Yalnızca fatura tasarrufu hedefliyorsanız: Türkiye'deki mevcut tarifede bataryanın tek başına geri ödeme süresi 10–15 yıla çıkabilir.",
+        ],
+      },
+      {
+        tip: "not",
+        icerik:
+          "LFP bataryaların kullanım ömrü 10–15 yıldır (kapasitesi %80'e düştüğünde değişim gerekebilir). Batarya değişim maliyetini geri ödeme hesabınıza mutlaka dahil edin.",
+      },
+      {
+        tip: "h2",
+        icerik: "Güneş paneli olmadan yalnızca batarya alınır mı?",
+      },
+      {
+        tip: "paragraf",
+        icerik:
+          "Teorik olarak mümkündür: gece ucuz şebekeden şarj edip gündüz pik saatinde kullanmak. Ama Türkiye'deki mevcut tarife yapısında zaman dilimli fiyatlandırma oldukça sınırlıdır. Batarya, güneş paneli sistemiyle birlikte değerlendirildiğinde çok daha anlamlı bir yatırım haline gelir.",
+      },
+      {
+        tip: "sonuc",
+        icerik:
+          "Batarya sistemi her hane için doğru seçim değil ama doğru koşullarda güçlü bir tamamlayıcı. Karar vermeden önce tüketim profilinizi ve bölgenizdeki kesinti sıklığını analiz edin. Hesaplayıcımızla hibrit sistem geri ödeme süresini on-grid ile karşılaştırabilirsiniz.",
       },
     ],
   },
