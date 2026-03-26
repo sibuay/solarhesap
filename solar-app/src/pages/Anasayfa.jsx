@@ -299,7 +299,7 @@ export default function Anasayfa() {
       </section>
 
       {/* ── Referanslar ───────────────────────────────────── */}
-      <section className="py-24 px-6 bg-slate-900/70">
+      <section className="py-24 px-6">
         <div className="max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -346,7 +346,7 @@ export default function Anasayfa() {
       </section>
 
       {/* ── Blog & SSS ────────────────────────────────────── */}
-      <section className="py-16 px-6 bg-slate-800/50">
+      <section className="py-16 px-6">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
