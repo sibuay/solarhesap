@@ -383,7 +383,7 @@ export default function Anasayfa() {
       </section>
 
       {/* ── Final CTA ─────────────────────────────────────── */}
-      <section className="py-24 px-6 bg-linear-to-br from-slate-800 via-slate-800 to-slate-900 border-t border-slate-700">
+      <section className="py-24 px-6 bg-slate-800/50">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
