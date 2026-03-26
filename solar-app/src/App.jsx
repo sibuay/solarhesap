@@ -1,4 +1,11 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { useEffect } from "react";
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
+  return null;
+}
 import Navbar from "./components/Navbar";
 import Anasayfa from "./pages/Anasayfa";
 import Hesaplayici from "./pages/Hesaplayici";
@@ -17,6 +24,7 @@ import Footer from "./components/Footer";
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <SolarBackground />
       <Navbar />
       <div className="relative z-10">

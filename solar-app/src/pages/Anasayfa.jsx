@@ -106,6 +106,17 @@ export default function Anasayfa() {
         ref={heroRef}
         className="relative min-h-screen w-full overflow-hidden flex items-center"
       >
+        {/* Video background */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+          src="/gpy.mp4"
+        />
+        <div className="absolute inset-0 bg-slate-900/60" />
+
         <AnimatedOrbs />
         <FloatingParticles />
 
@@ -232,11 +243,11 @@ export default function Anasayfa() {
         </div>
 
         {/* Bottom fade */}
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-linear-to-t from-slate-900 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-40 bg-linear-to-t from-slate-900 to-transparent" />
       </section>
 
       {/* ── 3 Adım ────────────────────────────────────────── */}
-      <section className="py-24 px-6 bg-slate-800/50">
+      <section className="py-24 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
