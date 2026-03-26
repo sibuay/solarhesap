@@ -23,9 +23,9 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Anasayfa />} />
           <Route path="/hesaplayici" element={<Hesaplayici />} />
-          <Route path="/nasil-calisir" element={<NasilCalisir />} />
+          <Route path="/rehber" element={<NasilCalisir />} />
           <Route path="/hizmetlerimiz" element={<Hizmetlerimiz />} />
-          <Route path="/hakkimda" element={<Hakkimda />} />
+          <Route path="/hakkimizda" element={<Hakkimda />} />
           <Route path="/iletisim" element={<Iletisim />} />
           <Route path="/sss" element={<SSS />} />
           <Route path="/blog" element={<Blog />} />

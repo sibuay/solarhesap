@@ -1,13 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Sun, Zap, TrendingUp, Shield, ArrowRight, Star, MapPin, CheckCircle } from "lucide-react";
+import { Sun, Zap, TrendingUp, ArrowRight, Star, MapPin, CheckCircle, BookOpen, HelpCircle } from "lucide-react";
 
 const ozellikler = [
   {
     icon: Sun,
     baslik: "81 İl PSH Verisi",
     aciklama: "Türkiye'nin tüm illerinin güneşlenme verisiyle doğru boyutlandırma.",
+    link: "/iller",
   },
   {
     icon: Zap,
@@ -19,19 +20,8 @@ const ozellikler = [
     baslik: "Geri Ödeme Analizi",
     aciklama: "Yıllık tasarruf ve yatırımın geri dönüş süresini net görün.",
   },
-  {
-    icon: Shield,
-    baslik: "Mühendis Onaylı",
-    aciklama: "TMMOB üyesi elektrik mühendisi tarafından doğrulanmış hesaplama motoru.",
-  },
 ];
 
-const istatistikler = [
-  { deger: "81", birim: "İl", aciklama: "PSH Veri Kapsamı" },
-  { deger: "500+", birim: "Proje", aciklama: "Tamamlanan Kurulum" },
-  { deger: "±%15", birim: "Hata Payı", aciklama: "Şeffaf Doğruluk" },
-  { deger: "10+", birim: "Yıl", aciklama: "Mühendislik Deneyimi" },
-];
 
 const referanslar = [
   { ad: "Serkan T.", konum: "Konya", metin: "Fatura yüksek gelince bakmaya başladım, bu site işimi gördü. Komşuma da önerdim zaten.", puan: 5 },
@@ -146,12 +136,17 @@ export default function Anasayfa() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="mb-8 inline-flex items-center gap-2 rounded-full border border-orange-500/25 bg-orange-500/10 px-4 py-2 backdrop-blur-sm"
+            className="mb-8"
           >
-            <Sun className="h-4 w-4 text-orange-400" />
-            <span className="text-sm font-medium text-orange-200">
-              Türkiye'nin en kapsamlı güneş enerjisi sistemi hesaplayıcısı
-            </span>
+            <Link
+              to="/hesaplayici"
+              className="inline-flex items-center gap-2 rounded-full border border-orange-500/25 bg-orange-500/10 px-4 py-2 backdrop-blur-sm hover:border-orange-500/50 hover:bg-orange-500/20 transition-all"
+            >
+              <Sun className="h-4 w-4 text-orange-400" />
+              <span className="text-sm font-medium text-orange-200">
+                Türkiye'nin en kapsamlı güneş enerjisi sistemi hesaplayıcısı
+              </span>
+            </Link>
           </motion.div>
 
           {/* Heading */}
@@ -195,7 +190,7 @@ export default function Anasayfa() {
               <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
             </Link>
             <Link
-              to="/nasil-calisir"
+              to="/rehber"
               className="inline-flex items-center gap-2 px-8 py-4 border border-slate-600 bg-slate-800/50 text-slate-200 font-semibold rounded-full backdrop-blur-sm hover:border-slate-500 hover:bg-slate-700/50 transition-all duration-300"
             >
               Rehber
@@ -206,76 +201,38 @@ export default function Anasayfa() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.7 }}
-            className="mt-5 text-sm text-slate-500"
+            className="mt-5 text-sm text-slate-300"
           >
             Kayıt gerekmez • Tamamen ücretsiz
           </motion.p>
 
-          {/* Stats */}
+          {/* Özellikler */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.7 }}
-            className="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-4"
+            className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-4"
           >
-            {istatistikler.map(({ deger, birim, aciklama }) => (
-              <div
-                key={aciklama}
-                className="rounded-2xl border border-slate-600/60 bg-slate-700/40 p-5 backdrop-blur-sm"
-              >
-                <p className="text-2xl font-bold text-orange-400">
-                  {deger} <span className="text-base">{birim}</span>
-                </p>
-                <p className="text-xs text-slate-400 mt-1">{aciklama}</p>
-              </div>
-            ))}
+            {ozellikler.map(({ icon: Icon, baslik, aciklama, link }) => {
+              const inner = (
+                <div className="flex flex-col items-center text-center gap-3">
+                  <div className="w-11 h-11 bg-orange-500/15 border border-orange-500/20 rounded-xl flex items-center justify-center">
+                    <Icon className="w-5 h-5 text-orange-400" />
+                  </div>
+                  <p className="text-lg font-semibold text-white leading-snug">{baslik}</p>
+                  <p className="text-base text-slate-300 leading-relaxed">{aciklama}</p>
+                </div>
+              );
+              const cls = "rounded-2xl border border-slate-600/60 bg-slate-700/40 p-5 backdrop-blur-sm hover:border-orange-500/30 transition-all duration-300";
+              return link
+                ? <Link key={baslik} to={link} className={cls}>{inner}</Link>
+                : <div key={baslik} className={cls}>{inner}</div>;
+            })}
           </motion.div>
         </div>
 
         {/* Bottom fade */}
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-linear-to-t from-slate-900 to-transparent" />
-      </section>
-
-      {/* ── Özellikler ────────────────────────────────────── */}
-      <section className="py-24 px-6 bg-slate-900/70">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-14"
-          >
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-              Neden Solarlat?
-            </h2>
-            <p className="text-slate-400 max-w-xl mx-auto">
-              Türkiye'deki en doğru güneş enerjisi hesaplama aracı, mühendislik hassasiyetiyle.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {ozellikler.map(({ icon: Icon, baslik, aciklama }, i) => (
-              <motion.div
-                key={baslik}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                whileHover={{ scale: 1.03 }}
-                className="group relative rounded-2xl border border-slate-600/60 bg-slate-800/60 p-6 backdrop-blur-sm hover:border-orange-500/40 hover:shadow-lg hover:shadow-orange-500/10 transition-all duration-300"
-              >
-                <div className="absolute inset-0 rounded-2xl bg-linear-to-br from-orange-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="relative">
-                  <div className="w-12 h-12 bg-orange-500/15 border border-orange-500/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-orange-500/25 transition-colors">
-                    <Icon className="w-6 h-6 text-orange-400" />
-                  </div>
-                  <h3 className="font-bold text-white mb-2">{baslik}</h3>
-                  <p className="text-sm text-slate-400 leading-relaxed">{aciklama}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
       </section>
 
       {/* ── 3 Adım ────────────────────────────────────────── */}
@@ -288,7 +245,7 @@ export default function Anasayfa() {
             className="mb-14"
           >
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">3 Adımda Hesaplama</h2>
-            <p className="text-slate-400">Minimum girdi, maksimum doğru çıktı.</p>
+            <p className="text-slate-300">Minimum girdi, maksimum doğru çıktı.</p>
           </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
@@ -309,7 +266,7 @@ export default function Anasayfa() {
                   {num}
                 </div>
                 <h3 className="font-bold text-white mb-2 text-lg">{baslik}</h3>
-                <p className="text-sm text-slate-400 leading-relaxed">{text}</p>
+                <p className="text-sm text-slate-300 leading-relaxed">{text}</p>
               </motion.div>
             ))}
           </div>
@@ -340,7 +297,7 @@ export default function Anasayfa() {
             className="text-center mb-14"
           >
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Kullanıcılar Ne Diyor?</h2>
-            <p className="text-slate-400">Gerçek kullanıcıların gerçek deneyimleri.</p>
+            <p className="text-slate-300">Gerçek kullanıcıların gerçek deneyimleri.</p>
           </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
@@ -366,7 +323,7 @@ export default function Anasayfa() {
                   </div>
                   <div>
                     <p className="font-semibold text-white text-sm">{ad}</p>
-                    <p className="text-xs text-slate-500 flex items-center gap-1">
+                    <p className="text-sm text-slate-400 flex items-center gap-1">
                       <MapPin className="w-3 h-3" />{konum}
                     </p>
                   </div>
@@ -374,6 +331,43 @@ export default function Anasayfa() {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── Blog & SSS ────────────────────────────────────── */}
+      <section className="py-16 px-6 bg-slate-800/50">
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="grid grid-cols-1 sm:grid-cols-2 gap-5"
+          >
+            <Link
+              to="/blog"
+              className="group flex items-start gap-4 bg-slate-800/60 border border-slate-600/60 rounded-2xl p-6 backdrop-blur-sm hover:border-orange-500/40 hover:shadow-lg hover:shadow-orange-500/10 transition-all duration-300"
+            >
+              <div className="w-11 h-11 bg-orange-500/15 border border-orange-500/20 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-orange-500/25 transition-colors">
+                <BookOpen className="w-5 h-5 text-orange-400" />
+              </div>
+              <div>
+                <h3 className="font-bold text-white mb-1 group-hover:text-orange-400 transition-colors">Rehber Yazılar</h3>
+                <p className="text-sm text-slate-300 leading-relaxed">On-grid mi hibrit mi? Yasal süreç, geri ödeme ve daha fazlası.</p>
+              </div>
+            </Link>
+            <Link
+              to="/sss"
+              className="group flex items-start gap-4 bg-slate-800/60 border border-slate-600/60 rounded-2xl p-6 backdrop-blur-sm hover:border-orange-500/40 hover:shadow-lg hover:shadow-orange-500/10 transition-all duration-300"
+            >
+              <div className="w-11 h-11 bg-orange-500/15 border border-orange-500/20 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-orange-500/25 transition-colors">
+                <HelpCircle className="w-5 h-5 text-orange-400" />
+              </div>
+              <div>
+                <h3 className="font-bold text-white mb-1 group-hover:text-orange-400 transition-colors">Sık Sorulan Sorular</h3>
+                <p className="text-sm text-slate-300 leading-relaxed">Panel ömrü, 25 kW sınırı, net metering ve merak ettiğiniz her şey.</p>
+              </div>
+            </Link>
+          </motion.div>
         </div>
       </section>
 

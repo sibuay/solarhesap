@@ -6,10 +6,10 @@ import { Sun, Menu, X, Home, Calculator, HelpCircle, Briefcase, User, Phone, Boo
 const links = [
   { to: "/", label: "Anasayfa", icon: Home },
   { to: "/hesaplayici", label: "Hesaplayıcı", icon: Calculator },
-  { to: "/nasil-calisir", label: "Rehber", icon: HelpCircle },
+  { to: "/rehber", label: "Rehber", icon: HelpCircle },
   { to: "/blog", label: "Blog", icon: BookOpen },
   { to: "/hizmetlerimiz", label: "Hizmetlerimiz", icon: Briefcase },
-  { to: "/hakkimda", label: "Hakkımızda", icon: User },
+  { to: "/hakkimizda", label: "Hakkımızda", icon: User },
   { to: "/iletisim", label: "İletişim", icon: Phone },
 ];
 
