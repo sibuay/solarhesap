@@ -571,6 +571,275 @@ const blogYazilari = [
       },
     ],
   },
+  {
+    slug: "sanliurfa-gunes-paneli-kurulumu",
+    baslik: "Şanlıurfa'da Güneş Paneli Kurulumu — Türkiye'nin En Avantajlı Şehri",
+    ozet:
+      "Şanlıurfa, PSH 5.8 ile Türkiye'nin güneş enerjisi açısından en avantajlı şehidir. Panel sayısı, maliyet ve geri ödeme süresi için gerçekçi rakamlar.",
+    tarih: "27 Mart 2026",
+    okumaSuresi: "6 dk",
+    etiketler: ["şanlıurfa", "kurulum", "güneydoğu", "maliyet", "geri ödeme"],
+    bolumler: [
+      {
+        tip: "paragraf",
+        icerik:
+          "Şanlıurfa, yıllık ortalama günlük güneşlenme süresi (PSH) 5.8 saat ile Türkiye'nin güneş enerjisi yatırımı açısından en cazip şehidir. Bu değer Türkiye ortalamasının yaklaşık %20 üzerindedir ve doğrudan daha fazla enerji üretimi, daha kısa geri ödeme süresi anlamına gelir.",
+      },
+      {
+        tip: "h2",
+        icerik: "Şanlıurfa'da ne kadar enerji üretilir?",
+      },
+      {
+        tip: "paragraf",
+        icerik:
+          "PSH 5.8 değeriyle Şanlıurfa'da 1 kW'lık güneş paneli yılda yaklaşık 1.900–2.000 kWh enerji üretir. Karşılaştırma için İstanbul'da aynı sistem 1.500–1.600 kWh üretir. Bu fark, Şanlıurfa'daki sistemlerin fatura tasarrufunu ciddi ölçüde artırır.",
+      },
+      {
+        tip: "h2",
+        icerik: "Örnek hesaplama: aylık 400 kWh tüketen bir hane",
+      },
+      {
+        tip: "liste",
+        maddeler: [
+          "Gerekli sistem gücü: ~4 kW on-grid",
+          "Panel sayısı: 10–11 adet (410–450 Wp panel)",
+          "Tahmini kurulum maliyeti: 100.000–120.000 ₺",
+          "Yıllık tasarruf: ~35.000–40.000 ₺",
+          "Tahmini geri ödeme süresi: 3–4 yıl",
+        ],
+      },
+      {
+        tip: "not",
+        icerik:
+          "Hesaplamalar güncel elektrik tarifeleri ve ±%15 hata payı ile yapılmıştır. Kişiselleştirilmiş sonuç için hesaplayıcımızı kullanabilirsiniz.",
+      },
+      {
+        tip: "h2",
+        icerik: "Hangi sistem tipi uygun?",
+      },
+      {
+        tip: "paragraf",
+        icerik:
+          "Şanlıurfa'da şebeke altyapısı genel olarak güçlüdür; büyük şehir merkezlerinde on-grid sistem yeterlidir. Kırsal veya sık kesinti yaşanan bölgelerde hibrit sistem değerlendirilebilir. Sulama amaçlı kullanım için off-grid veya pompa sistemleri ayrıca planlanmalıdır.",
+      },
+      {
+        tip: "h2",
+        icerik: "Dikkat edilmesi gereken noktalar",
+      },
+      {
+        tip: "liste",
+        maddeler: [
+          "Toz ve kum: Güneydoğu'da hava koşulları nedeniyle panel temizliği daha sık yapılmalı (2–3 ayda bir).",
+          "Sıcaklık katsayısı: Yaz aylarında aşırı sıcaklar panel verimini kısmen düşürebilir; bu PSH hesabında zaten kısmen yansıtılmıştır.",
+          "Kurulum firması seçimi: Şanlıurfa'da yetkili kurulum firması sayısı büyük şehirlere göre daha az olabilir. Referans kontrolü yapın.",
+          "Çatı yönü: Düz teraslı evlerde eğim ayarlı montajla yön sorunu kolayca aşılır.",
+        ],
+      },
+      {
+        tip: "sonuc",
+        icerik:
+          "Şanlıurfa, güneş enerjisi yatırımı için Türkiye'nin en avantajlı konumundadır. Doğru sistem ve kaliteli ekipmanla 3–4 yılda geri ödeyen, 25 yıl boyunca tasarruf sağlayan bir yatırım mümkündür. Kendi tüketiminiz için detaylı hesaplama yapmak isterseniz Solarlat hesaplayıcısını kullanabilirsiniz.",
+      },
+    ],
+  },
+  {
+    slug: "antalya-gunes-paneli-kurulumu",
+    baslik: "Antalya'da Güneş Paneli Kurulumu — PSH 5.5 ile Kısa Geri Ödeme",
+    ozet:
+      "Antalya, yüksek güneşlenme süresi ve turizm sezonuyla güneş enerjisi için ideal bir şehir. Konut ve işletmeler için hesaplama rehberi.",
+    tarih: "27 Mart 2026",
+    okumaSuresi: "6 dk",
+    etiketler: ["antalya", "kurulum", "akdeniz", "maliyet", "konut"],
+    bolumler: [
+      {
+        tip: "paragraf",
+        icerik:
+          "Antalya, günde ortalama 5.5 saatlik pik güneş ışığıyla (PSH) Türkiye'nin güneş enerjisi açısından en avantajlı şehirleri arasında yer alır. Akdeniz iklimiyle yılın büyük bölümünde berrak gökyüzü, hem konut hem de ticari yatırımcılar için yüksek üretim verimliliği demektir.",
+      },
+      {
+        tip: "h2",
+        icerik: "Antalya'da güneş enerjisi ne kadar üretir?",
+      },
+      {
+        tip: "paragraf",
+        icerik:
+          "PSH 5.5 değeriyle Antalya'da 1 kW'lık kurulu güç yılda yaklaşık 1.850–1.950 kWh enerji üretir. Bu, yılın büyük bölümünde güneşlenmenin düzenli ve tahmin edilebilir olduğu anlamına gelir; yatırım hesaplamaları daha güvenilir sonuç verir.",
+      },
+      {
+        tip: "h2",
+        icerik: "Örnek hesaplama: aylık 350 kWh tüketen bir hane",
+      },
+      {
+        tip: "liste",
+        maddeler: [
+          "Gerekli sistem gücü: ~3.5 kW on-grid",
+          "Panel sayısı: 8–9 adet (410–450 Wp panel)",
+          "Tahmini kurulum maliyeti: 90.000–110.000 ₺",
+          "Yıllık tasarruf: ~30.000–35.000 ₺",
+          "Tahmini geri ödeme süresi: 3–4 yıl",
+        ],
+      },
+      {
+        tip: "h2",
+        icerik: "Konut mu, işletme mi — hangisi daha avantajlı?",
+      },
+      {
+        tip: "paragraf",
+        icerik:
+          "Antalya'da özellikle otel, pansiyon ve restoran gibi ticari işletmeler güneş enerjisinden en fazla yararlanabilecek kesimdir. Yoğun turizm sezonunda (Nisan–Ekim) elektrik tüketimi zirveye çıkarken güneşlenme de en üst seviyededir — üretim ve tüketim örtüşmesi çok iyi. Konutlarda da geri ödeme süresi İstanbul veya Karadeniz şehirlerine kıyasla belirgin biçimde kısadır.",
+      },
+      {
+        tip: "h2",
+        icerik: "Kurulum için dikkat edilmesi gereken noktalar",
+      },
+      {
+        tip: "liste",
+        maddeler: [
+          "Çatı tipi: Antalya'da birçok konut düz teraslıdır; eğim ayarlı montaj seçeneği verimini artırır.",
+          "Tuz ve nem: Kıyı bölgelerinde IP65 ve üzeri koruma sınıfı olan panel ve inverterleri tercih edin.",
+          "Firma seçimi: Antalya'da rekabetçi piyasa var; en az 3 firmadan teklif alın.",
+          "Çatı statik analizi: Düz teraslarda ek yük hesabı kurulum öncesi yapılmalıdır.",
+        ],
+      },
+      {
+        tip: "sonuc",
+        icerik:
+          "Antalya, Türkiye'nin en avantajlı güneş enerjisi lokasyonlarından biridir. Özellikle ticari işletmeler için yüksek tüketim döneminin yüksek üretimle örtüşmesi eşsiz bir fırsat sunar. Kendi hesabınızı yapmak için Solarlat'ın ücretsiz hesaplayıcısını kullanabilirsiniz.",
+      },
+    ],
+  },
+  {
+    slug: "gaziantep-gunes-paneli-kurulumu",
+    baslik: "Gaziantep'te Güneş Paneli Kurulumu — Sanayi ve Konutlar İçin Rehber",
+    ozet:
+      "Gaziantep, PSH 5.4 ile güneş enerjisi yatırımı için uygun bir şehir. Sanayiden konuta kapsamlı hesaplama ve kurulum rehberi.",
+    tarih: "27 Mart 2026",
+    okumaSuresi: "6 dk",
+    etiketler: ["gaziantep", "kurulum", "güneydoğu", "sanayi", "maliyet"],
+    bolumler: [
+      {
+        tip: "paragraf",
+        icerik:
+          "Gaziantep, günde ortalama 5.4 saatlik pik güneş ışığıyla (PSH) güneş enerjisi yatırımı için uygun koşullara sahip bir şehirdir. Güçlü sanayi altyapısıyla şehirde hem konut hem ticari hem de sanayi ölçekli güneş enerjisi sistemlerine yönelik ciddi bir ilgi bulunmaktadır.",
+      },
+      {
+        tip: "h2",
+        icerik: "Gaziantep'te üretim potansiyeli",
+      },
+      {
+        tip: "paragraf",
+        icerik:
+          "PSH 5.4 değeriyle Gaziantep'te 1 kW'lık sistem yılda yaklaşık 1.800–1.900 kWh enerji üretir. Yılın büyük bölümünde güneşlenme düzenlidir; sanayi tesislerinde gündüz üretimi gündüz tüketimiyle örtüştüğü için net fatura tasarrufu yüksektir.",
+      },
+      {
+        tip: "h2",
+        icerik: "Örnek hesaplama: aylık 500 kWh tüketen bir hane",
+      },
+      {
+        tip: "liste",
+        maddeler: [
+          "Gerekli sistem gücü: ~5 kW on-grid",
+          "Panel sayısı: 11–13 adet (410–450 Wp panel)",
+          "Tahmini kurulum maliyeti: 120.000–145.000 ₺",
+          "Yıllık tasarruf: ~42.000–48.000 ₺",
+          "Tahmini geri ödeme süresi: 3–4 yıl",
+        ],
+      },
+      {
+        tip: "h2",
+        icerik: "Sanayi ve ticari kullanım",
+      },
+      {
+        tip: "paragraf",
+        icerik:
+          "Gaziantep'in güçlü imalat sektörü yüksek elektrik tüketimi anlamına gelir. Fabrika ve atölyeler için çatı üstü veya arazi tipi güneş enerjisi sistemleri, özellikle gündüz saatlerindeki tüketimi karşılamada son derece ekonomiktir. Sanayi tarifesindeki yüksek elektrik maliyeti geri ödeme süresini 2–4 yıla kadar indirebilir.",
+      },
+      {
+        tip: "h2",
+        icerik: "Dikkat edilmesi gereken noktalar",
+      },
+      {
+        tip: "liste",
+        maddeler: [
+          "Toz: Güneydoğu'da kum fırtınaları panel yüzeyini kirletebilir; 2–3 aylık temizlik aralığı önerilir.",
+          "Sıcaklık: Yaz aylarında 40°C+ sıcaklıklar panel verimini kısmen düşürür; bu PSH hesabında dikkate alınmıştır.",
+          "Bağlantı başvurusu: Gaziantep'te dağıtım şirketi başvuru süreleri yoğun dönemlerde uzayabilir; erken başvuru yapın.",
+          "Sanayi tesisleri için: Trafo kapasitesi ve şebeke bağlantı şartlarını önceden elektrik mühendisiyle değerlendirin.",
+        ],
+      },
+      {
+        tip: "sonuc",
+        icerik:
+          "Gaziantep, hem konut hem sanayi ölçeğinde güneş enerjisi yatırımı için güçlü bir potansiyele sahiptir. Yüksek elektrik tüketimi olan işletmeler için özellikle avantajlıdır. Tüketiminize göre kişiselleştirilmiş hesaplama için Solarlat hesaplayıcısını kullanabilirsiniz.",
+      },
+    ],
+  },
+  {
+    slug: "mersin-gunes-paneli-kurulumu",
+    baslik: "Mersin'de Güneş Paneli Kurulumu — Akdeniz Avantajı",
+    ozet:
+      "Mersin, PSH 5.3 ile Akdeniz iklimiyle uzun güneşlenme süresine sahip. Konut ve tarım amaçlı güneş enerjisi kurulumu için kapsamlı rehber.",
+    tarih: "27 Mart 2026",
+    okumaSuresi: "5 dk",
+    etiketler: ["mersin", "kurulum", "akdeniz", "tarım", "maliyet"],
+    bolumler: [
+      {
+        tip: "paragraf",
+        icerik:
+          "Mersin, PSH 5.3 saat/gün ile Türkiye'nin en yüksek güneşlenme sürelerine sahip şehirlerinden biridir. Akdeniz iklimiyle yılın 300 günü üzerinde güneşli geçen Mersin, hem konut hem tarımsal sulama hem de ticari amaçlı güneş enerjisi yatırımı için avantajlı bir lokasyondur.",
+      },
+      {
+        tip: "h2",
+        icerik: "Mersin'de güneş enerjisi üretim potansiyeli",
+      },
+      {
+        tip: "paragraf",
+        icerik:
+          "PSH 5.3 değeriyle Mersin'de 1 kW'lık sistem yılda yaklaşık 1.750–1.850 kWh enerji üretir. Uzun yaz sezonu ve seyrek bulutlu hava, üretimin yıl boyunca tahmin edilebilir kalmasını sağlar.",
+      },
+      {
+        tip: "h2",
+        icerik: "Örnek hesaplama: aylık 400 kWh tüketen bir hane",
+      },
+      {
+        tip: "liste",
+        maddeler: [
+          "Gerekli sistem gücü: ~4 kW on-grid",
+          "Panel sayısı: 9–10 adet (410–450 Wp panel)",
+          "Tahmini kurulum maliyeti: 100.000–120.000 ₺",
+          "Yıllık tasarruf: ~33.000–38.000 ₺",
+          "Tahmini geri ödeme süresi: 3–4 yıl",
+        ],
+      },
+      {
+        tip: "h2",
+        icerik: "Tarımsal sulama sistemleri",
+      },
+      {
+        tip: "paragraf",
+        icerik:
+          "Mersin'in geniş tarım arazileri, güneş enerjili sulama pompası sistemleri için büyük bir fırsat sunar. Sulama ihtiyacının en yüksek olduğu yaz aylarında güneşlenme de zirvededir; bu örtüşme pompalama maliyetini büyük ölçüde ortadan kaldırır. Off-grid veya hibrit sulama sistemleri Mersin çiftçileri arasında giderek yaygınlaşmaktadır.",
+      },
+      {
+        tip: "h2",
+        icerik: "Kurulum için dikkat edilmesi gereken noktalar",
+      },
+      {
+        tip: "liste",
+        maddeler: [
+          "Deniz etkisi: Kıyıya yakın konumlarda tuz korozyonuna karşı dayanıklı bileşenler seçin (deniz ortamı sertifikası).",
+          "Nem: Yüksek nemli ortamlarda inverter muhafazasının havalandırmasına dikkat edin.",
+          "Tarım arazisi sistemleri: Arazi tipi kurulumda tapu ve tarım arazisi mevzuatına uygunluk kontrolü gerekebilir.",
+          "Şebeke kapasitesi: Kırsal bölgelerde şebeke bağlantı kapasitesi önceden DEDAŞ ile görüşülerek netleştirilmelidir.",
+        ],
+      },
+      {
+        tip: "sonuc",
+        icerik:
+          "Mersin, konut yatırımcısından çiftçiye geniş bir kesim için güneş enerjisi yatırımını cazip kılan güneşlenme değerlerine sahiptir. Akdeniz ikliminin sunduğu bu avantajı değerlendirmek için Solarlat'ın ücretsiz hesaplayıcısıyla kendi sisteminizi boyutlandırabilirsiniz.",
+      },
+    ],
+  },
 ];
 
 export default blogYazilari;
