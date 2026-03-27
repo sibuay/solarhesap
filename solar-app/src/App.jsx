@@ -1,9 +1,15 @@
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import ReactGA from "react-ga4";
+
+ReactGA.initialize("G-1H1NBYK81Z");
 
 function ScrollToTop() {
   const { pathname } = useLocation();
-  useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    ReactGA.send({ hitType: "pageview", page: pathname });
+  }, [pathname]);
   return null;
 }
 import Navbar from "./components/Navbar";
