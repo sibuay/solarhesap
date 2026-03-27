@@ -576,7 +576,7 @@ const blogYazilari = [
     baslik: "Şanlıurfa'da Güneş Paneli Kurulumu — Türkiye'nin En Avantajlı Şehri",
     ozet:
       "Şanlıurfa, PSH 5.8 ile Türkiye'nin güneş enerjisi açısından en avantajlı şehidir. Panel sayısı, maliyet ve geri ödeme süresi için gerçekçi rakamlar.",
-    tarih: "27 Mart 2026",
+    tarih: "26 Şubat 2026",
     okumaSuresi: "6 dk",
     etiketler: ["şanlıurfa", "kurulum", "güneydoğu", "maliyet", "geri ödeme"],
     bolumler: [
@@ -647,7 +647,7 @@ const blogYazilari = [
     baslik: "Antalya'da Güneş Paneli Kurulumu — PSH 5.5 ile Kısa Geri Ödeme",
     ozet:
       "Antalya, yüksek güneşlenme süresi ve turizm sezonuyla güneş enerjisi için ideal bir şehir. Konut ve işletmeler için hesaplama rehberi.",
-    tarih: "27 Mart 2026",
+    tarih: "26 Şubat 2026",
     okumaSuresi: "6 dk",
     etiketler: ["antalya", "kurulum", "akdeniz", "maliyet", "konut"],
     bolumler: [
@@ -713,7 +713,7 @@ const blogYazilari = [
     baslik: "Gaziantep'te Güneş Paneli Kurulumu — Sanayi ve Konutlar İçin Rehber",
     ozet:
       "Gaziantep, PSH 5.4 ile güneş enerjisi yatırımı için uygun bir şehir. Sanayiden konuta kapsamlı hesaplama ve kurulum rehberi.",
-    tarih: "27 Mart 2026",
+    tarih: "26 Şubat 2026",
     okumaSuresi: "6 dk",
     etiketler: ["gaziantep", "kurulum", "güneydoğu", "sanayi", "maliyet"],
     bolumler: [
@@ -779,7 +779,7 @@ const blogYazilari = [
     baslik: "Mersin'de Güneş Paneli Kurulumu — Akdeniz Avantajı",
     ozet:
       "Mersin, PSH 5.3 ile Akdeniz iklimiyle uzun güneşlenme süresine sahip. Konut ve tarım amaçlı güneş enerjisi kurulumu için kapsamlı rehber.",
-    tarih: "27 Mart 2026",
+    tarih: "26 Şubat 2026",
     okumaSuresi: "5 dk",
     etiketler: ["mersin", "kurulum", "akdeniz", "tarım", "maliyet"],
     bolumler: [
