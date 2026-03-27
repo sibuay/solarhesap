@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { Calculator, MessageCircle, CheckCircle, ArrowRight } from "lucide-react";
 
 const hizmetler = [
@@ -57,6 +58,11 @@ const renkler = {
 export default function Hizmetlerimiz() {
   return (
     <div className="min-h-screen pt-36 pb-16 px-4">
+      <Helmet>
+        <title>Hizmetlerimiz — Güneş Enerjisi Danışmanlık | Solarlat</title>
+        <meta name="description" content="Ücretsiz hesaplama aracı ve uzman danışmanlık hizmetleri. Güneş enerjisi sisteminizi doğru boyutlandırın, bağımsız danışmanlıkla doğru kararı verin." />
+        <link rel="canonical" href="https://www.solarlat.com/hizmetlerimiz" />
+      </Helmet>
       <div className="max-w-3xl mx-auto">
 
         <motion.div

@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { Sun, ArrowLeft, ArrowRight, TrendingUp, Zap } from "lucide-react";
 import { slugToSehir } from "../utils/slugify";
@@ -47,6 +48,11 @@ export default function IlDetay() {
 
   return (
     <div className="min-h-screen pt-36 pb-16 px-4">
+      <Helmet>
+        <title>{sehir} Güneş Enerjisi Sistemi Hesaplama — Solarlat</title>
+        <meta name="description" content={`${sehir} için güneş enerjisi sistemi hesaplama. PSH ${pshData[sehir]} saat/gün, panel sayısı, kurulum maliyeti ve geri ödeme süresi.`} />
+        <link rel="canonical" href={`https://www.solarlat.com/il/${slug}`} />
+      </Helmet>
       <div className="max-w-2xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
           <Link

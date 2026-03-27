@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { ArrowRight } from "lucide-react";
 
 const kavramlar = [
@@ -56,6 +57,11 @@ const kavramlar = [
 export default function NasilCalisir() {
   return (
     <div className="min-h-screen pt-36 pb-16 px-4">
+      <Helmet>
+        <title>Güneş Enerjisi Nasıl Çalışır? — Solarlat Rehberi</title>
+        <meta name="description" content="kWh, PSH, on-grid, off-grid, hibrit sistem nedir? Güneş enerjisi temel kavramlarını ve hesaplama mantığını açıklayan kapsamlı rehber." />
+        <link rel="canonical" href="https://www.solarlat.com/rehber" />
+      </Helmet>
       <div className="max-w-3xl mx-auto">
 
         <motion.div

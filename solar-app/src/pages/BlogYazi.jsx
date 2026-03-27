@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { ArrowLeft, Clock, Tag, ArrowRight } from "lucide-react";
 import blogYazilari from "../data/blogYazilari";
@@ -72,6 +73,11 @@ export default function BlogYazi() {
 
   return (
     <div className="min-h-screen pt-36 pb-16 px-4">
+      <Helmet>
+        <title>{yazi.baslik} — Solarlat Blog</title>
+        <meta name="description" content={yazi.ozet} />
+        <link rel="canonical" href={`https://www.solarlat.com/blog/${yazi.slug}`} />
+      </Helmet>
       <div className="max-w-3xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
           <Link

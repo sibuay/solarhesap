@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import pshData from "../data/pshData";
 import AletSecici from "../components/AletSecici";
@@ -138,6 +139,11 @@ export default function Hesaplayici() {
 
   return (
     <div className="min-h-screen pt-20 pb-10 px-4">
+      <Helmet>
+        <title>Güneş Enerjisi Hesaplayıcı — Solarlat</title>
+        <meta name="description" content="Aylık tüketiminizi ve şehrinizi girin, güneş paneli sayısı, inverter kapasitesi, kurulum maliyeti ve geri ödeme süresini anında hesaplayın. 81 il PSH verisi." />
+        <link rel="canonical" href="https://www.solarlat.com/hesaplayici" />
+      </Helmet>
       <div className="max-w-4xl mx-auto">
         <motion.button
           onClick={() => { setMod(null); setSonuc(null); setAnlikGucW(0); setAnlikGucKwInput(""); }}

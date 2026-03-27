@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { Sun } from "lucide-react";
 import pshData from "../data/pshData";
 import { slugify } from "../utils/slugify";
@@ -26,6 +27,11 @@ function pshRenk(psh) {
 export default function Iller() {
   return (
     <div className="min-h-screen pt-36 pb-16 px-4">
+      <Helmet>
+        <title>81 İl Güneş Enerjisi Potansiyeli — Solarlat</title>
+        <meta name="description" content="Türkiye'nin 81 ili için günlük güneşlenme süresi (PSH) ve güneş enerjisi potansiyeli. İlinizi seçin, sisteminizi hesaplayın." />
+        <link rel="canonical" href="https://www.solarlat.com/iller" />
+      </Helmet>
       <div className="max-w-3xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-10">
           <div className="inline-flex items-center gap-2 border border-orange-500/25 bg-orange-500/10 px-3 py-1.5 rounded-full mb-4">

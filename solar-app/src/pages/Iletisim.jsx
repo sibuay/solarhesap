@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import { Mail, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
 
 export default function Iletisim() {
@@ -35,6 +36,11 @@ export default function Iletisim() {
 
   return (
     <div className="min-h-screen pt-36 pb-16 px-4">
+      <Helmet>
+        <title>İletişim — Solarlat</title>
+        <meta name="description" content="Güneş enerjisi sisteminiz için ücretsiz danışmanlık alın. Sorularınızı iletin, size özel hesaplama ve öneri sunalım." />
+        <link rel="canonical" href="https://www.solarlat.com/iletisim" />
+      </Helmet>
       <div className="max-w-2xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

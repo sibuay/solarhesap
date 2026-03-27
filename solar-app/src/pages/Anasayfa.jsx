@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { Sun, Zap, TrendingUp, ArrowRight, Star, MapPin, CheckCircle, BookOpen, HelpCircle } from "lucide-react";
 
@@ -101,6 +102,11 @@ export default function Anasayfa() {
 
   return (
     <div className="text-slate-100">
+      <Helmet>
+        <title>Solarlat — Güneş Enerjisi Sistemi Hesaplayıcı</title>
+        <meta name="description" content="Türkiye'nin 81 ili için güneş enerjisi sistemi hesaplayıcısı. Panel sayısı, inverter kapasitesi, kurulum maliyeti ve geri ödeme süresini anında hesaplayın." />
+        <link rel="canonical" href="https://www.solarlat.com/" />
+      </Helmet>
       {/* ── Hero ──────────────────────────────────────────── */}
       <section
         ref={heroRef}

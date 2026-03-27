@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { ChevronDown, ArrowRight } from "lucide-react";
 
@@ -108,6 +109,11 @@ export default function SSS() {
 
   return (
     <div className="min-h-screen pt-36 pb-16 px-4">
+      <Helmet>
+        <title>Sık Sorulan Sorular — Güneş Enerjisi SSS | Solarlat</title>
+        <meta name="description" content="Güneş paneli ömrü, on-grid off-grid farkı, YEKDEM teşvikleri, kurulum süreci ve maliyeti hakkında en çok sorulan soruların yanıtları." />
+        <link rel="canonical" href="https://www.solarlat.com/sss" />
+      </Helmet>
       <div className="max-w-3xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-10">
           <h1 className="text-3xl sm:text-4xl font-bold text-white mb-3">Sık Sorulan Sorular</h1>

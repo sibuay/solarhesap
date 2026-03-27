@@ -1,11 +1,17 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { Clock, Tag, ArrowRight } from "lucide-react";
 import blogYazilari from "../data/blogYazilari";
 
 export default function Blog() {
   return (
     <div className="min-h-screen pt-36 pb-16 px-4">
+      <Helmet>
+        <title>Blog — Güneş Enerjisi Rehberleri | Solarlat</title>
+        <meta name="description" content="Güneş enerjisi, panel seçimi, YEKDEM, hibrit sistemler ve tasarruf hesabı hakkında kapsamlı rehberler ve güncel yazılar." />
+        <link rel="canonical" href="https://www.solarlat.com/blog" />
+      </Helmet>
       <div className="max-w-3xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-10">
           <h1 className="text-3xl sm:text-4xl font-bold text-white mb-3">Blog</h1>

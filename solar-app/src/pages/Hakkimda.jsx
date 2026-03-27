@@ -1,9 +1,15 @@
 import { motion } from "framer-motion";
 import { Shield, Award, Wrench } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 
 export default function Hakkimda() {
   return (
     <div className="min-h-screen pt-36 pb-16 px-4">
+      <Helmet>
+        <title>Hakkımızda — Solarlat</title>
+        <meta name="description" content="Solarlat hakkında: bağımsız güneş enerjisi danışmanlığı, mühendis onaylı hesaplama araçları ve Türkiye'nin 81 ili için kapsamlı veri." />
+        <link rel="canonical" href="https://www.solarlat.com/hakkimizda" />
+      </Helmet>
       <div className="max-w-3xl mx-auto">
 
         <motion.div
