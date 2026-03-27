@@ -53,6 +53,11 @@ export default function BlogYazi() {
       headline: yazi.baslik,
       description: yazi.ozet,
       datePublished: yazi.tarih,
+      author: {
+        "@type": "Person",
+        name: "Solarlat Mühendis Ekibi",
+        url: "https://www.solarlat.com/hakkimizda",
+      },
       publisher: {
         "@type": "Organization",
         name: "Solarlat",
