@@ -69,7 +69,7 @@ export default function NasilCalisir() {
           animate={{ opacity: 1, y: 0 }}
           className="mb-12"
         >
-          <h1 className="text-3xl sm:text-4xl font-bold text-white mb-3">Temel Kavramlar</h1>
+          <h1 className="text-3xl sm:text-4xl font-bold text-white mb-3">Güneş Enerjisi Sistemi Temel Kavramları</h1>
           <p className="text-slate-300 text-lg leading-relaxed">
             Hesaplayıcıyı kullanmadan önce kafanızda soru işareti bırakan terimler varsa
             bu sayfadaki kısa açıklamalara göz atın.
