@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Shield, Award, Wrench } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Shield, Award, Wrench, ArrowRight } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 
 export default function Hakkimda() {
@@ -56,7 +57,7 @@ export default function Hakkimda() {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
-          className="bg-slate-800/60 border border-slate-600/60 rounded-2xl p-6 backdrop-blur-sm"
+          className="bg-slate-800/60 border border-slate-600/60 rounded-2xl p-6 backdrop-blur-sm mb-6"
         >
           <h2 className="font-bold text-white mb-3">Hesaplama Motoru Hakkında</h2>
           <p className="text-base text-slate-300 leading-relaxed">
@@ -64,6 +65,20 @@ export default function Hakkimda() {
             verilerini birleştiriyor. Kullandığımız verim katsayıları ve PSH değerleri gerçek proje
             verileriyle doğrulanmıştır. Sonuçlar ±%15 hata payıyla gerçek kurulum değerlerine yakınsıyor.
           </p>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6 }}
+        >
+          <Link
+            to="/hizmetlerimiz"
+            className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-400 text-white font-semibold px-6 py-3 rounded-xl transition-colors"
+          >
+            Hizmetlerimizi inceleyin
+            <ArrowRight className="w-4 h-4" />
+          </Link>
         </motion.div>
 
       </div>
