@@ -4,6 +4,13 @@ import { Helmet } from "react-helmet-async";
 import { Clock, Tag, ArrowRight } from "lucide-react";
 import blogYazilari from "../data/blogYazilari";
 
+const aylar = ["Ocak","Şubat","Mart","Nisan","Mayıs","Haziran","Temmuz","Ağustos","Eylül","Ekim","Kasım","Aralık"];
+function tarihDeger(tarih) {
+  const [gun, ay, yil] = tarih.split(" ");
+  return new Date(yil, aylar.indexOf(ay), Number(gun));
+}
+const siraliBloglar = [...blogYazilari].sort((a, b) => tarihDeger(b.tarih) - tarihDeger(a.tarih));
+
 export default function Blog() {
   return (
     <div className="min-h-screen pt-36 pb-16 px-4">
@@ -21,7 +28,7 @@ export default function Blog() {
         </motion.div>
 
         <div className="space-y-5">
-          {blogYazilari.map(({ slug, baslik, ozet, tarih, okumaSuresi, etiketler }, i) => (
+          {siraliBloglar.map(({ slug, baslik, ozet, tarih, okumaSuresi, etiketler }, i) => (
             <motion.div
               key={slug}
               initial={{ opacity: 0, y: 16 }}

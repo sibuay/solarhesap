@@ -66,7 +66,7 @@ export default function Navbar() {
                   <Link
                     to={to}
                     className={`relative flex items-center gap-1.5 px-4 py-2 text-sm font-medium rounded-xl transition-colors duration-200 ${
-                      isActive ? "text-white" : "text-slate-400 hover:text-slate-100"
+                      isActive ? "text-white" : "text-white hover:text-orange-300"
                     }`}
                   >
                     {/* Sliding gradient pill (active) */}
@@ -174,7 +174,7 @@ export default function Navbar() {
                           to={to}
                           onClick={() => setIsOpen(false)}
                           className={`relative flex items-center gap-3 px-4 py-3 rounded-xl text-base font-medium transition-colors overflow-hidden ${
-                            isActive ? "text-white" : "text-slate-400 hover:text-white"
+                            isActive ? "text-white" : "text-white hover:text-orange-300"
                           }`}
                         >
                           {isActive && (
