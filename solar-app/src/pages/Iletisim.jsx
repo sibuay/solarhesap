@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
-import { Mail, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
+import { CheckCircle, AlertCircle, Loader2 } from "lucide-react";
 
 export default function Iletisim() {
   const [form, setForm] = useState({ ad: "", email: "", mesaj: "" });
@@ -12,7 +12,7 @@ export default function Iletisim() {
     setDurum("gonderiyor");
 
     try {
-      const res = await fetch("https://formsubmit.co/ajax/info@solarlat.com", {
+      const res = await fetch("https://formsubmit.co/ajax/ayinizi@gmail.com", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
@@ -53,23 +53,6 @@ export default function Iletisim() {
           </p>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.1 }}
-          className="mb-10"
-        >
-          <div className="flex items-center gap-3 border border-blue-500/30 bg-blue-500/10 rounded-xl p-4 backdrop-blur-sm">
-            <div className="p-2 rounded-lg bg-white/5 text-blue-400">
-              <Mail className="w-5 h-5" />
-            </div>
-            <div>
-              <p className="text-xs text-slate-400">E-posta</p>
-              <p className="font-semibold text-white text-sm">info@solarlat.com</p>
-            </div>
-          </div>
-        </motion.div>
-
         {durum === "basarili" ? (
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
@@ -91,7 +74,7 @@ export default function Iletisim() {
             {durum === "hata" && (
               <div className="flex items-center gap-2 text-sm text-red-400 bg-red-500/10 border border-red-500/30 rounded-lg px-4 py-3">
                 <AlertCircle className="w-4 h-4 shrink-0" />
-                Mesaj gönderilemedi. Lütfen tekrar deneyin veya doğrudan info@solarlat.com adresine yazın.
+                Mesaj gönderilemedi. Lütfen tekrar deneyin.
               </div>
             )}
 

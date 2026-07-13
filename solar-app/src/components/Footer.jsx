@@ -1,4 +1,4 @@
-import { Sun, Mail } from "lucide-react";
+import { Sun } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const footerLinks = [
@@ -31,13 +31,6 @@ export default function Footer() {
               </Link>
             ))}
           </nav>
-          <a
-            href="mailto:info@solarlat.com"
-            className="flex items-center gap-2 text-sm text-slate-400 hover:text-orange-400 transition-colors"
-          >
-            <Mail className="w-4 h-4" />
-            info@solarlat.com
-          </a>
         </div>
       </div>
     </footer>
